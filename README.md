@@ -1,5 +1,14 @@
 # fpl-api-node
+
+[![npm](https://img.shields.io/npm/v/fpl-api-node.svg)](https://www.npmjs.com/package/fpl-api-node)
+[![npm](https://img.shields.io/apm/l/vim-mode.svg)]()
+
 A simple node wrapper for the fantasy.premierleague.com restful web api
+
+## Installation
+```js
+npm install fpl-api-node --save
+```
 
 ## Usage
 ```js
