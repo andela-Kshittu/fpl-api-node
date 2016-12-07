@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tgreyuk/node-fpl-api.git"
+    "url": "git+https://github.com/tgreyuk/fpl-api-node.git"
   },
   "author": "Thomas Grey",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/tgreyuk/node-fpl-api/issues"
+    "url": "https://github.com/tgreyuk/fpl-api-node/issues"
   },
-  "homepage": "https://github.com/tgreyuk/node-fpl-api#readme",
+  "homepage": "https://github.com/tgreyuk/fpl-api-node#readme",
   "dependencies": {
     "node-fetch": "^1.6.3"
   }
