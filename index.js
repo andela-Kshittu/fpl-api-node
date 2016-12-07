@@ -78,7 +78,7 @@ module.exports = {
   /**
    * Entry (FPL team)
    * A promise that if fullfilled returns a json object mapped to:
-   * https://fantasy.premierleague.com/drf/elements
+   * https://fantasy.premierleague.com/drf/entry/${id}
    * @param id Entry id
    * @returns {Promise}
    */

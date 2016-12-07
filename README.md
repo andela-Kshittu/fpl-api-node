@@ -70,7 +70,7 @@ https://fantasy.premierleague.com/drf/event/${eventNumber}/live
 ### fplApiNode.getEntry(id) ⇒ <code>Promise</code>
 Entry (FPL team)
 A promise that if fullfilled returns a json object mapped to:
-https://fantasy.premierleague.com/drf/elements
+https://fantasy.premierleague.com/drf/entry/${id}
 
 **Kind**: static method of <code>[fplApiNode](#module_fplApiNode)</code>
 
