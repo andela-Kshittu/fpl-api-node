@@ -1,5 +1,5 @@
 # fpl-api-node
-A simple node wrapper for the fantasy.premierleague restful web api
+A simple node wrapper for the fantasy.premierleague.com restful web api
 
 ## Usage
 ```js
