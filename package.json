@@ -1,0 +1,22 @@
+{
+  "name": "fpl-api-node",
+  "version": "1.0.0",
+  "description": "A simple node wrapper for the fantasy.premierleague restful web api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tgreyuk/node-fpl-api.git"
+  },
+  "author": "Thomas Grey",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tgreyuk/node-fpl-api/issues"
+  },
+  "homepage": "https://github.com/tgreyuk/node-fpl-api#readme",
+  "dependencies": {
+    "node-fetch": "^1.6.3"
+  }
+}
