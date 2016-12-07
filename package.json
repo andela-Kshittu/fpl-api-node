@@ -1,7 +1,7 @@
 {
   "name": "fpl-api-node",
-  "version": "1.0.1",
-  "description": "A simple node wrapper for the fantasy.premierleague restful web api",
+  "version": "1.0.2",
+  "description": "A simple node wrapper for the fantasy.premierleague.com restful web api",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
