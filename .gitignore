@@ -2,6 +2,9 @@ node_modules
 .DS_Store
 .editorconfig
 .idea
+*.js
+*.js.map
 out
+docs
 npm-debug.log*
 

@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/tgreyuk/fpl-api-node#readme",
   "dependencies": {
+    "@types/node-fetch": "^1.6.6",
     "node-fetch": "^1.6.3"
-  }
+  },
+  "devDependencies": {}
 }
