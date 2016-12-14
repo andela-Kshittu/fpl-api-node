@@ -41,7 +41,7 @@ fplapi.getEntry(123456).then((entry) => {
 
 ### Typescript
 
-Typescript docs can be found at <a href="https://tgreyuk.github.io/fpl-api-node/index.html">https://tgreyuk.github.io/fpl-api-node</a>. 
+Typescript docs can be found at <a href="https://tgreyuk.github.io/fpl-api-node/index.html" target="_blank">https://tgreyuk.github.io/fpl-api-node</a>. 
 
 ### API
 
