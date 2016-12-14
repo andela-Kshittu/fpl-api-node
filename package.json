@@ -3,6 +3,7 @@
   "version": "1.0.3",
   "description": "A simple node wrapper for the fantasy.premierleague.com restful web api",
   "main": "index.js",
+  "types":"index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,6 +11,11 @@
     "type": "git",
     "url": "git+https://github.com/tgreyuk/fpl-api-node.git"
   },
+  "keywords": [
+    "fantasy premier league",
+    "fpl",
+    "api"
+  ],
   "author": "Thomas Grey",
   "license": "MIT",
   "bugs": {
