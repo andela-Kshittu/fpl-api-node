@@ -3,7 +3,7 @@
 [![npm](https://img.shields.io/npm/v/fpl-api-node.svg)](https://www.npmjs.com/package/fpl-api-node)
 [![npm](https://img.shields.io/apm/l/vim-mode.svg)]()
 
-A simple node wrapper for the fantasy.premierleague.com restful web api
+A simple node wrapper for the Fantasy Premier League (fantasy.premierleague.com) restful web api.
 
 ## Installation
 ```js
@@ -11,13 +11,26 @@ npm install fpl-api-node --save
 ```
 
 ## Usage
+The package is written in typescript and can be consumed either strongly-typed or in plain Javascript.
+
+Typescript:
+```js
+import * as fplapi from 'fpl-api-node';
+```
+
+Javascript:
+
 ```js
 const fplapi = require('fpl-api-node');
+```
 
-fplapi.getEntry(123456).then((data) => {
+### Example
+
+```js
+fplapi.getEntry(123456).then((entry) => {
 
     // do something with our data
-    console.log(data);
+    console.log(entry);
 
 }).catch((err) => {
     // something went wrong
@@ -26,117 +39,115 @@ fplapi.getEntry(123456).then((data) => {
 
 ## API
 
+### Typescript
+
+Typescript docs can be found at. 
+
+### Javascript API
+
+<a name="module_fplApiNode"></a>
+
+## fplApiNode
+
 * [fplApiNode](#module_fplApiNode)
-    * [.getAllStaticData()](#module_fplApiNode.getAllStaticData) ⇒ <code>Promise</code>
-    * [.getTeams()](#module_fplApiNode.getTeams) ⇒ <code>Promise</code>
-    * [.getElements()](#module_fplApiNode.getElements) ⇒ <code>Promise</code>
-    * [.getEvent(eventNumber)](#module_fplApiNode.getEvent) ⇒ <code>Promise</code>
-    * [.getEntry(id)](#module_fplApiNode.getEntry) ⇒ <code>Promise</code>
-    * [.getEntryHistory(id)](#module_fplApiNode.getEntryHistory) ⇒ <code>Promise</code>
-    * [.getEntryEvent(id, eventNumber)](#module_fplApiNode.getEntryEvent) ⇒ <code>Promise</code>
-    * [.getEntryTransfers(id)](#module_fplApiNode.getEntryTransfers) ⇒ <code>Promise</code>
-    * [.getClassicLeagueStandings(id)](#module_fplApiNode.getClassicLeagueStandings) ⇒ <code>Promise</code>
+    * [~getEntry(entryId)](#module_fplApiNode..getEntry) ⇒ <code>Promise</code>
+    * [~getEntryEvent(entryId, eventNumber)](#module_fplApiNode..getEntryEvent) ⇒ <code>Promise</code>
+    * [~getEntryTransfers(entryId)](#module_fplApiNode..getEntryTransfers) ⇒ <code>Promise</code>
+    * [~getAllStaticData()](#module_fplApiNode..getAllStaticData) ⇒ <code>Promise</code>
+    * [~getTeams()](#module_fplApiNode..getTeams) ⇒ <code>Promise</code>
+    * [~getElements()](#module_fplApiNode..getElements) ⇒ <code>Promise</code>
+    * [~getElementTypes()](#module_fplApiNode..getElementTypes) ⇒ <code>Promise</code>
+    * [~getGameSettings()](#module_fplApiNode..getGameSettings) ⇒ <code>Promise</code>
+    * [~getEvent()](#module_fplApiNode..getEvent) ⇒ <code>Promise</code>
+    * [~getClassicLeagueStandings(leagueId)](#module_fplApiNode..getClassicLeagueStandings) ⇒ <code>Promise</code>
 
-<a name="module_fplApiNode.getAllStaticData"></a>
+<a name="module_fplApiNode..getEntry"></a>
 
-### fplApiNode.getAllStaticData() ⇒ <code>Promise</code>
-All static game data.
-A promise that if fullfilled returns a json object mapped to:
-https://fantasy.premierleague.com/drf/bootstrap-static
+### fplApiNode~getEntry(entryId) ⇒ <code>Promise</code>
+Entry (Fpl manager team)
 
-**Kind**: static method of <code>[fplApiNode](#module_fplApiNode)</code>
-<a name="module_fplApiNode.getTeams"></a>
-
-### fplApiNode.getTeams() ⇒ <code>Promise</code>
-Teams (Premier Leaugue clubs)
-A promise that if fullfilled returns a json object mapped to:
-https://fantasy.premierleague.com/drf/teams
-
-**Kind**: static method of <code>[fplApiNode](#module_fplApiNode)</code>
-<a name="module_fplApiNode.getElements"></a>
-
-### fplApiNode.getElements() ⇒ <code>Promise</code>
-Elements (players)
-A promise that if fullfilled returns a json object mapped to:
-https://fantasy.premierleague.com/drf/elements
-
-**Kind**: static method of <code>[fplApiNode](#module_fplApiNode)</code>
-<a name="module_fplApiNode.getEvent"></a>
-
-### fplApiNode.getEvent(eventNumber) ⇒ <code>Promise</code>
-Event /gameweek details
-A promise that if fullfilled returns a json object mapped to:
-https://fantasy.premierleague.com/drf/event/${eventNumber}/live
-
-**Kind**: static method of <code>[fplApiNode](#module_fplApiNode)</code>
+**Kind**: inner method of <code>[fplApiNode](#module_fplApiNode)</code>
+**Returns**: <code>Promise</code> - If fulfilled returns an object mapped to https://fantasy.premierleague.com/drf/entry/${id}/history
 
 | Param | Description |
 | --- | --- |
-| eventNumber | The event / gameweek number |
+| entryId | Entry id |
 
-<a name="module_fplApiNode.getEntry"></a>
+<a name="module_fplApiNode..getEntryEvent"></a>
 
-### fplApiNode.getEntry(id) ⇒ <code>Promise</code>
-Entry (FPL team)
-A promise that if fullfilled returns a json object mapped to:
-https://fantasy.premierleague.com/drf/entry/${id}
-
-**Kind**: static method of <code>[fplApiNode](#module_fplApiNode)</code>
-
-| Param | Description |
-| --- | --- |
-| id | Entry id |
-
-<a name="module_fplApiNode.getEntryHistory"></a>
-
-### fplApiNode.getEntryHistory(id) ⇒ <code>Promise</code>
-Entry history. An expanded entry view with additional objects.
-A promise that if fullfilled returns a json object mapped to:
-https://fantasy.premierleague.com/drf/entry/${id}/history
-
-**Kind**: static method of <code>[fplApiNode](#module_fplApiNode)</code>
-
-| Param | Description |
-| --- | --- |
-| id | Entry id |
-
-<a name="module_fplApiNode.getEntryEvent"></a>
-
-### fplApiNode.getEntryEvent(id, eventNumber) ⇒ <code>Promise</code>
+### fplApiNode~getEntryEvent(entryId, eventNumber) ⇒ <code>Promise</code>
 Entry event. Details of a particular event (or gameweek)
-A promise that if fullfilled returns a json object mapped to:
-https://fantasy.premierleague.com/drf/entry/${id}/event/${eventNumber}
 
-**Kind**: static method of <code>[fplApiNode](#module_fplApiNode)</code>
+**Kind**: inner method of <code>[fplApiNode](#module_fplApiNode)</code>
+**Returns**: <code>Promise</code> - If fulfilled returns an object mapped to https://fantasy.premierleague.com/drf/entry/${id}/event/${eventNumber}
 
 | Param | Description |
 | --- | --- |
-| id | Entry id |
+| entryId | Entry id |
 | eventNumber | The event / gameweek number |
 
-<a name="module_fplApiNode.getEntryTransfers"></a>
+<a name="module_fplApiNode..getEntryTransfers"></a>
 
-### fplApiNode.getEntryTransfers(id) ⇒ <code>Promise</code>
-Entry transfers.
-A promise that if fullfilled returns a json object mapped to:
-https://fantasy.premierleague.com/drf/entry/${id}/transfers
+### fplApiNode~getEntryTransfers(entryId) ⇒ <code>Promise</code>
+Entry transfers
 
-**Kind**: static method of <code>[fplApiNode](#module_fplApiNode)</code>
+**Kind**: inner method of <code>[fplApiNode](#module_fplApiNode)</code>
+**Returns**: <code>Promise</code> - If fulfilled returns an object mapped to https://fantasy.premierleague.com/drf/entry/${id}/transfers
 
 | Param | Description |
 | --- | --- |
-| id | Entry id |
+| entryId | Entry id |
 
-<a name="module_fplApiNode.getClassicLeagueStandings"></a>
+<a name="module_fplApiNode..getAllStaticData"></a>
 
-### fplApiNode.getClassicLeagueStandings(id) ⇒ <code>Promise</code>
+### fplApiNode~getAllStaticData() ⇒ <code>Promise</code>
+All static game data
+
+**Kind**: inner method of <code>[fplApiNode](#module_fplApiNode)</code>
+**Returns**: <code>Promise</code> - If fulfilled returns an object mapped to https://fantasy.premierleague.com/drf/bootstrap-static
+<a name="module_fplApiNode..getTeams"></a>
+
+### fplApiNode~getTeams() ⇒ <code>Promise</code>
+Teams (Premier Leaugue clubs)
+
+**Kind**: inner method of <code>[fplApiNode](#module_fplApiNode)</code>
+**Returns**: <code>Promise</code> - If fulfilled returns an object mapped to https://fantasy.premierleague.com/drf/teams
+<a name="module_fplApiNode..getElements"></a>
+
+### fplApiNode~getElements() ⇒ <code>Promise</code>
+Elements (players)
+
+**Kind**: inner method of <code>[fplApiNode](#module_fplApiNode)</code>
+**Returns**: <code>Promise</code> - If fulfilled returns an object mapped to https://fantasy.premierleague.com/drf/elements
+<a name="module_fplApiNode..getElementTypes"></a>
+
+### fplApiNode~getElementTypes() ⇒ <code>Promise</code>
+Element types
+
+**Kind**: inner method of <code>[fplApiNode](#module_fplApiNode)</code>
+**Returns**: <code>Promise</code> - If fulfilled returns an object mapped to https://fantasy.premierleague.com/drf/elements-types
+<a name="module_fplApiNode..getGameSettings"></a>
+
+### fplApiNode~getGameSettings() ⇒ <code>Promise</code>
+Game settings
+
+**Kind**: inner method of <code>[fplApiNode](#module_fplApiNode)</code>
+**Returns**: <code>Promise</code> - If fulfilled returns an object mapped to https://fantasy.premierleague.com/drf/game-settings
+<a name="module_fplApiNode..getEvent"></a>
+
+### fplApiNode~getEvent() ⇒ <code>Promise</code>
+Event /gameweek details
+
+**Kind**: inner method of <code>[fplApiNode](#module_fplApiNode)</code>
+**Returns**: <code>Promise</code> - If fulfilled returns an object mapped to https://fantasy.premierleague.com/drf/event/${eventNumber}/live
+<a name="module_fplApiNode..getClassicLeagueStandings"></a>
+
+### fplApiNode~getClassicLeagueStandings(leagueId) ⇒ <code>Promise</code>
 Classic league standings
-A promise that if fullfilled returns a json object mapped to:
 https://fantasy.premierleague.com/drf/leagues-classic-standings/${id}
 
-**Kind**: static method of <code>[fplApiNode](#module_fplApiNode)</code>
+**Kind**: inner method of <code>[fplApiNode](#module_fplApiNode)</code>
 
 | Param | Description |
 | --- | --- |
-| id | League id |
-
+| leagueId | League id |
