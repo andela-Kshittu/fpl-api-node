@@ -4,6 +4,7 @@ node_modules
 .idea
 *.js
 *.js.map
+*.d.ts
 out
 docs
 npm-debug.log*
