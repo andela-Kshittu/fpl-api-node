@@ -3,7 +3,11 @@
   "version": "1.0.3",
   "description": "A simple node wrapper for the fantasy.premierleague.com restful web api",
   "main": "index.js",
-  "types":"index.d.ts",
+  "typings": "index",
+  "files": [
+    "index.js",
+    "index.d.ts"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
