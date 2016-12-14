@@ -1,6 +1,6 @@
 {
   "name": "fpl-api-node",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A simple node wrapper for the fantasy.premierleague.com restful web api",
   "main": "lib/index.js",
   "typings": "lib/index",
