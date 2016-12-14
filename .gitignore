@@ -1,11 +1,7 @@
 node_modules
 .DS_Store
-.editorconfig
 .idea
-*.js
-*.js.map
-*.d.ts
+lib/
 out
-docs
 npm-debug.log*
 
