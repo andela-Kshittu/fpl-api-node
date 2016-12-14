@@ -31,35 +31,35 @@ function fetchData(path: string) {
 
 
 /**
- * Entry (Fpl manager team)
+ * Entry (Fpl manager team): A promise that if fulfilled returns an object mapped to https://fantasy.premierleague.com/drf/entry/${id}/history
  * @param entryId Entry id
- * @returns {Promise} If fulfilled returns an object mapped to https://fantasy.premierleague.com/drf/entry/${id}/history
+ * @returns {Promise}
  */
 export function getEntry(entryId: number): Promise<Entry> {
   return fetchData(`/entry/${entryId}/history`);
 }
 /**
- * Entry event. Details of a particular event (or gameweek)
+ * Entry event. Details of a particular event (or gameweek): A promise that if fulfilled returns an object mapped to https://fantasy.premierleague.com/drf/entry/${id}/event/${eventNumber}
  * @param entryId Entry id
  * @param eventNumber The event / gameweek number
- * @returns {Promise} If fulfilled returns an object mapped to https://fantasy.premierleague.com/drf/entry/${id}/event/${eventNumber}
+ * @returns {Promise}
  */
 export function getEntryEvent(entryId: number, eventNumber: number): Promise<EntryEvent> {
   return fetchData(`/entry/${entryId}/event/${eventNumber}`);
 }
 
 /**
- * Entry transfers
+ * Entry transfers: A promise that if fulfilled returns an object mapped to https://fantasy.premierleague.com/drf/entry/${id}/transfers
  * @param entryId Entry id
- * @returns {Promise} If fulfilled returns an object mapped to https://fantasy.premierleague.com/drf/entry/${id}/transfers
+ * @returns {Promise}
  */
 export function getEntryTransfers(entryId: number): Promise<EntryTransfers> {
   return fetchData(`/entry/${entryId}/transfers`);
 }
 
 /**
- * All static game data
- * @returns {Promise} If fulfilled returns an object mapped to https://fantasy.premierleague.com/drf/bootstrap-static
+ * All static game data: A promise that if fulfilled returns an object mapped to https://fantasy.premierleague.com/drf/bootstrap-static
+ * @returns {Promise}
  */
 export function getAllStaticData(): Promise<AllStaticData> {
   return fetchData('/bootstrap-static');
@@ -67,40 +67,40 @@ export function getAllStaticData(): Promise<AllStaticData> {
 
 
 /**
- * Teams (Premier Leaugue clubs)
- * @returns {Promise} If fulfilled returns an object mapped to https://fantasy.premierleague.com/drf/teams
+ * Teams (Premier Leaugue clubs): A promise that if fulfilled returns an object mapped to https://fantasy.premierleague.com/drf/teams
+ * @returns {Promise}
  */
 export function getTeams(): Promise<Team[]> {
   return fetchData('/teams');
 }
 
 /**
- * Elements (players)
- * @returns {Promise} If fulfilled returns an object mapped to https://fantasy.premierleague.com/drf/elements
+ * Elements (players): A promise that if fulfilled returns an object mapped to https://fantasy.premierleague.com/drf/elements
+ * @returns {Promise}
  */
 export function getElements(): Promise<Element[]> {
   return fetchData('/elements');
 }
 
 /**
- * Element types
- * @returns {Promise} If fulfilled returns an object mapped to https://fantasy.premierleague.com/drf/elements-types
+ * Element types: A promise that if fulfilled returns an object mapped to https://fantasy.premierleague.com/drf/elements-types
+ * @returns {Promise}
  */
 export function getElementTypes(): Promise<ElementType[]> {
   return fetchData('/element-types');
 }
 
 /**
- * Game settings
- * @returns {Promise} If fulfilled returns an object mapped to https://fantasy.premierleague.com/drf/game-settings
+ * Game settings: A promise that if fulfilled returns an object mapped to https://fantasy.premierleague.com/drf/game-settings
+ * @returns {Promise}
  */
 export function getGameSettings(): Promise<GameSettings> {
   return fetchData('game-settings');
 }
 
 /**
- * Event /gameweek details
- * @returns {Promise} If fulfilled returns an object mapped to https://fantasy.premierleague.com/drf/event/${eventNumber}/live
+ * Event /gameweek details: A promise that if fulfilled returns an object mapped to https://fantasy.premierleague.com/drf/event/${eventNumber}/live
+ * @returns {Promise}
  */
 export function getEvent(eventNumber: number): Promise<Event> {
   return fetchData(`/event/${eventNumber}/live`);
@@ -108,8 +108,7 @@ export function getEvent(eventNumber: number): Promise<Event> {
 
 
 /**
- * Classic league standings
- * https://fantasy.premierleague.com/drf/leagues-classic-standings/${id}
+ * Classic league standings: A promise that if fulfilled returns an object mapped to https://fantasy.premierleague.com/drf/leagues-classic-standings/${id}
  * @param leagueId League id
  * @returns {Promise}
  */

@@ -47,8 +47,6 @@ Typescript docs can be found at.
 
 <a name="module_fplApiNode"></a>
 
-## fplApiNode
-
 * [fplApiNode](#module_fplApiNode)
     * [~getEntry(entryId)](#module_fplApiNode..getEntry) ⇒ <code>Promise</code>
     * [~getEntryEvent(entryId, eventNumber)](#module_fplApiNode..getEntryEvent) ⇒ <code>Promise</code>
@@ -64,10 +62,9 @@ Typescript docs can be found at.
 <a name="module_fplApiNode..getEntry"></a>
 
 ### fplApiNode~getEntry(entryId) ⇒ <code>Promise</code>
-Entry (Fpl manager team)
+Entry (Fpl manager team): A promise that if fulfilled returns an object mapped to https://fantasy.premierleague.com/drf/entry/${id}/history
 
 **Kind**: inner method of <code>[fplApiNode](#module_fplApiNode)</code>
-**Returns**: <code>Promise</code> - If fulfilled returns an object mapped to https://fantasy.premierleague.com/drf/entry/${id}/history
 
 | Param | Description |
 | --- | --- |
@@ -76,10 +73,9 @@ Entry (Fpl manager team)
 <a name="module_fplApiNode..getEntryEvent"></a>
 
 ### fplApiNode~getEntryEvent(entryId, eventNumber) ⇒ <code>Promise</code>
-Entry event. Details of a particular event (or gameweek)
+Entry event. Details of a particular event (or gameweek): A promise that if fulfilled returns an object mapped to https://fantasy.premierleague.com/drf/entry/${id}/event/${eventNumber}
 
 **Kind**: inner method of <code>[fplApiNode](#module_fplApiNode)</code>
-**Returns**: <code>Promise</code> - If fulfilled returns an object mapped to https://fantasy.premierleague.com/drf/entry/${id}/event/${eventNumber}
 
 | Param | Description |
 | --- | --- |
@@ -89,10 +85,9 @@ Entry event. Details of a particular event (or gameweek)
 <a name="module_fplApiNode..getEntryTransfers"></a>
 
 ### fplApiNode~getEntryTransfers(entryId) ⇒ <code>Promise</code>
-Entry transfers
+Entry transfers: A promise that if fulfilled returns an object mapped to https://fantasy.premierleague.com/drf/entry/${id}/transfers
 
 **Kind**: inner method of <code>[fplApiNode](#module_fplApiNode)</code>
-**Returns**: <code>Promise</code> - If fulfilled returns an object mapped to https://fantasy.premierleague.com/drf/entry/${id}/transfers
 
 | Param | Description |
 | --- | --- |
@@ -101,53 +96,47 @@ Entry transfers
 <a name="module_fplApiNode..getAllStaticData"></a>
 
 ### fplApiNode~getAllStaticData() ⇒ <code>Promise</code>
-All static game data
+All static game data: A promise that if fulfilled returns an object mapped to https://fantasy.premierleague.com/drf/bootstrap-static
 
 **Kind**: inner method of <code>[fplApiNode](#module_fplApiNode)</code>
-**Returns**: <code>Promise</code> - If fulfilled returns an object mapped to https://fantasy.premierleague.com/drf/bootstrap-static
 <a name="module_fplApiNode..getTeams"></a>
 
 ### fplApiNode~getTeams() ⇒ <code>Promise</code>
-Teams (Premier Leaugue clubs)
+Teams (Premier Leaugue clubs): A promise that if fulfilled returns an object mapped to https://fantasy.premierleague.com/drf/teams
 
 **Kind**: inner method of <code>[fplApiNode](#module_fplApiNode)</code>
-**Returns**: <code>Promise</code> - If fulfilled returns an object mapped to https://fantasy.premierleague.com/drf/teams
 <a name="module_fplApiNode..getElements"></a>
 
 ### fplApiNode~getElements() ⇒ <code>Promise</code>
-Elements (players)
+Elements (players): A promise that if fulfilled returns an object mapped to https://fantasy.premierleague.com/drf/elements
 
 **Kind**: inner method of <code>[fplApiNode](#module_fplApiNode)</code>
-**Returns**: <code>Promise</code> - If fulfilled returns an object mapped to https://fantasy.premierleague.com/drf/elements
 <a name="module_fplApiNode..getElementTypes"></a>
 
 ### fplApiNode~getElementTypes() ⇒ <code>Promise</code>
-Element types
+Element types: A promise that if fulfilled returns an object mapped to https://fantasy.premierleague.com/drf/elements-types
 
 **Kind**: inner method of <code>[fplApiNode](#module_fplApiNode)</code>
-**Returns**: <code>Promise</code> - If fulfilled returns an object mapped to https://fantasy.premierleague.com/drf/elements-types
 <a name="module_fplApiNode..getGameSettings"></a>
 
 ### fplApiNode~getGameSettings() ⇒ <code>Promise</code>
-Game settings
+Game settings: A promise that if fulfilled returns an object mapped to https://fantasy.premierleague.com/drf/game-settings
 
 **Kind**: inner method of <code>[fplApiNode](#module_fplApiNode)</code>
-**Returns**: <code>Promise</code> - If fulfilled returns an object mapped to https://fantasy.premierleague.com/drf/game-settings
 <a name="module_fplApiNode..getEvent"></a>
 
 ### fplApiNode~getEvent() ⇒ <code>Promise</code>
-Event /gameweek details
+Event /gameweek details: A promise that if fulfilled returns an object mapped to https://fantasy.premierleague.com/drf/event/${eventNumber}/live
 
 **Kind**: inner method of <code>[fplApiNode](#module_fplApiNode)</code>
-**Returns**: <code>Promise</code> - If fulfilled returns an object mapped to https://fantasy.premierleague.com/drf/event/${eventNumber}/live
 <a name="module_fplApiNode..getClassicLeagueStandings"></a>
 
 ### fplApiNode~getClassicLeagueStandings(leagueId) ⇒ <code>Promise</code>
-Classic league standings
-https://fantasy.premierleague.com/drf/leagues-classic-standings/${id}
+Classic league standings: A promise that if fulfilled returns an object mapped to https://fantasy.premierleague.com/drf/leagues-classic-standings/${id}
 
 **Kind**: inner method of <code>[fplApiNode](#module_fplApiNode)</code>
 
 | Param | Description |
 | --- | --- |
 | leagueId | League id |
+
