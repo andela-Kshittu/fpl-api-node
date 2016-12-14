@@ -32,18 +32,16 @@ function fetchData(path: string) {
 
 /**
  * All static game data.
- * A promise that if fulfilled returns a json object mapped to:
  * https://fantasy.premierleague.com/drf/bootstrap-static
- * @returns {Promise<Team>}
+ * @returns {Promise}
  */
-export function getStaticData(): Promise<StaticData> {
+export function getAllStaticData(): Promise<AllStaticData> {
   return fetchData('/bootstrap-static');
 }
 
 
 /**
  * Teams (Premier Leaugue clubs)
- * A promise that if fulfilled returns a json object mapped to:
  * https://fantasy.premierleague.com/drf/teams
  * @returns {Promise}
  */
@@ -53,7 +51,6 @@ export function getTeams(): Promise<Team[]> {
 
 /**
  * Elements (players)
- * A promise that if fulfilled returns a json object mapped to:
  * https://fantasy.premierleague.com/drf/elements
  * @returns {Promise}
  */
@@ -62,41 +59,35 @@ export function getElements(): Promise<Element[]> {
 }
 
 /**
- * Event /gameweek details
- * A promise that if fulfilled returns a json object mapped to:
- * https://fantasy.premierleague.com/drf/event/${eventNumber}/live
- * @param eventNumber The event / gameweek number
+ * Element types
+ * https://fantasy.premierleague.com/drf/elements-types
  * @returns {Promise}
  */
-export function getEvent(eventNumber: number) {
-  return fetchData(`/event/${eventNumber}/live`);
+export function getElementTypes(): Promise<ElementType[]> {
+  return fetchData('/element-types');
 }
 
 /**
- * Entry (FPL team)
- * A promise that if fulfilled returns a json object mapped to:
- * https://fantasy.premierleague.com/drf/entry/${id}
- * @param id Entry id
+ * Element types
+ * https://fantasy.premierleague.com/drf/game-settings
  * @returns {Promise}
  */
-export function getEntry(id: number) {
-  return fetchData(`/entry/${id}`);
+export function getGameSettings(): Promise<GameSettings> {
+  return fetchData('game-settings');
+
 }
 
 /**
- * Entry history. An expanded entry view with additional objects.
- * A promise that if fulfilled returns a json object mapped to:
+ * Entry (Fpl manager team)
  * https://fantasy.premierleague.com/drf/entry/${id}/history
  * @param id Entry id
  * @returns {Promise}
  */
-export function getEntryHistory(id: number) {
+export function getEntry(id: number): Promise<Entry> {
   return fetchData(`/entry/${id}/history`);
 }
-
 /**
  * Entry event. Details of a particular event (or gameweek)
- * A promise that if fulfilled returns a json object mapped to:
  * https://fantasy.premierleague.com/drf/entry/${id}/event/${eventNumber}
  * @param id Entry id
  * @param eventNumber The event / gameweek number
@@ -108,7 +99,6 @@ export function getEntryEvent(id: number, eventNumber: number) {
 
 /**
  * Entry transfers.
- * A promise that if fulfilled returns a json object mapped to:
  * https://fantasy.premierleague.com/drf/entry/${id}/transfers
  * @param id Entry id
  * @returns {Promise}
@@ -119,7 +109,6 @@ export function getEntryTransfers(id: number) {
 
 /**
  * Classic league standings
- * A promise that if fulfilled returns a json object mapped to:
  * https://fantasy.premierleague.com/drf/leagues-classic-standings/${id}
  * @param id League id
  * @returns {Promise}
@@ -129,43 +118,42 @@ export function getClassicLeagueStandings(id: number) {
 }
 
 // all static data
-export interface StaticData {
+export interface AllStaticData {
   phases: GamePhase[];
   elements: Element[];
-  'game-settings': GameSettings;
+  'game-settings': Game;
   'total-players': number;
   teams: Team[];
   element_types: ElementType[];
-  events: Event[];
+  events: GameEvent[];
 }
 
 // game interfaces
-export interface GamePhase {
-  id: number;
-  name: string;
-  start_event: number;
-  stop_event: number;
-}
 
-export interface GameFormations {
-  '1-5-2-3': number[][];
-  '1-5-3-2': number[][];
-  '1-3-5-2': number[][];
-  '1-2-5-3': number[][];
-  '1-4-5-1': number[][];
-  '1-5-4-1': number[][];
-  '1-4-3-3': number[][];
-  '1-3-4-3': number[][];
-  '1-4-4-2': number[][];
-}
 
 export interface GameSettings {
-  game: GameDetails;
+  game: Game;
   element_type: GameElement;
 }
 
+export interface GameEvent {
+  id: number;
+  name: string;
+  deadline_time: Date;
+  average_entry_score: number;
+  finished: boolean;
+  data_checked: boolean;
+  highest_scoring_entry?: number;
+  deadline_time_epoch: number;
+  deadline_time_game_offset: number;
+  deadline_time_formatted: string;
+  highest_score?: number;
+  is_previous: boolean;
+  is_current: boolean;
+  is_next: boolean;
+}
 
-export interface GameDetails {
+export interface Game {
   scoring_ea_index: number;
   league_prefix_public: string;
   bps_tackles: number;
@@ -270,6 +258,25 @@ export interface GameElement {
   bps_goals_scored: number;
   bps_clean_sheets: number;
   squad_select: number;
+}
+
+export interface GamePhase {
+  id: number;
+  name: string;
+  start_event: number;
+  stop_event: number;
+}
+
+export interface GameFormations {
+  '1-5-2-3': number[][];
+  '1-5-3-2': number[][];
+  '1-3-5-2': number[][];
+  '1-2-5-3': number[][];
+  '1-4-5-1': number[][];
+  '1-5-4-1': number[][];
+  '1-4-3-3': number[][];
+  '1-3-4-3': number[][];
+  '1-4-4-2': number[][];
 }
 
 // element interfaces
@@ -426,6 +433,126 @@ export interface LeaguePositions {
   start_event: number;
   stop_event: number;
 }
+
+// entry interfaces
+
+export interface Entry {
+  chips: EntryChip[];
+  entry: EntryDetails;
+  leagues: EntryLeagues;
+  season: EntrySeason[];
+  history: EntryHistory[];
+}
+
+export interface EntryDetails {
+  id: number;
+  player_first_name: string;
+  player_last_name: string;
+  player_region_id: number;
+  player_region_name: string;
+  player_region_short_iso: string;
+  summary_overall_points: number;
+  summary_overall_rank: number;
+  summary_event_points: number;
+  summary_event_rank?: any;
+  joined_seconds: number;
+  current_event: number;
+  total_transfers: number;
+  total_loans: number;
+  total_loans_active: number;
+  transfers_or_loans: string;
+  deleted: boolean;
+  email: boolean;
+  joined_time: Date;
+  name: string;
+  bank: number;
+  value: number;
+  kit: string;
+  event_transfers: number;
+  event_transfers_cost: number;
+  extra_free_transfers: number;
+  strategy?: any;
+  favourite_team?: any;
+  started_event: number;
+  player: number;
+}
+
+export interface EntryLeague {
+  id: number;
+  entry_rank: number;
+  entry_last_rank: number;
+  entry_movement: string;
+  entry_change?: any;
+  entry_can_leave: boolean;
+  entry_can_admin: boolean;
+  entry_can_invite: boolean;
+  entry_can_forum: boolean;
+  entry_code: string;
+  name: string;
+  short_name: string;
+  created: Date;
+  closed: boolean;
+  forum_disabled: boolean;
+  make_code_public: boolean;
+  rank?: any;
+  size?: any;
+  league_type: string;
+  _scoring: string;
+  reprocess_standings: boolean;
+  admin_entry?: number;
+  start_event: number;
+}
+
+export interface EntryLeagues {
+  cup: EntryLeague[];
+  h2h: EntryLeague[];
+  classic: EntryLeague[];
+}
+
+export interface EntryChip {
+  played_time_formatted: string;
+  status: string;
+  name: string;
+  time: Date;
+  chip: number;
+  entry: number;
+  event: number;
+}
+
+
+export interface EntrySeason {
+  id: number;
+  season_name: string;
+  total_points: number;
+  rank: number;
+  season: number;
+  player: number;
+}
+
+export interface EntryHistory {
+  id: number;
+  movement: string;
+  points: number;
+  total_points: number;
+  rank?: number;
+  rank_sort?: number;
+  overall_rank: number;
+  targets?: any;
+  event_transfers: number;
+  event_transfers_cost: number;
+  value: number;
+  points_on_bench: number;
+  bank: number;
+  entry: number;
+  event: number;
+}
+
+
+
+
+
+
+
 
 
 
