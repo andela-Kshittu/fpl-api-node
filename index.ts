@@ -31,9 +31,35 @@ function fetchData(path: string) {
 
 
 /**
- * All static game data.
- * https://fantasy.premierleague.com/drf/bootstrap-static
- * @returns {Promise}
+ * Entry (Fpl manager team)
+ * @param entryId Entry id
+ * @returns {Promise} If fulfilled returns an object mapped to https://fantasy.premierleague.com/drf/entry/${id}/history
+ */
+export function getEntry(entryId: number): Promise<Entry> {
+  return fetchData(`/entry/${entryId}/history`);
+}
+/**
+ * Entry event. Details of a particular event (or gameweek)
+ * @param entryId Entry id
+ * @param eventNumber The event / gameweek number
+ * @returns {Promise} If fulfilled returns an object mapped to https://fantasy.premierleague.com/drf/entry/${id}/event/${eventNumber}
+ */
+export function getEntryEvent(entryId: number, eventNumber: number): Promise<EntryEvent> {
+  return fetchData(`/entry/${entryId}/event/${eventNumber}`);
+}
+
+/**
+ * Entry transfers
+ * @param entryId Entry id
+ * @returns {Promise} If fulfilled returns an object mapped to https://fantasy.premierleague.com/drf/entry/${id}/transfers
+ */
+export function getEntryTransfers(entryId: number): Promise<EntryTransfers> {
+  return fetchData(`/entry/${entryId}/transfers`);
+}
+
+/**
+ * All static game data
+ * @returns {Promise} If fulfilled returns an object mapped to https://fantasy.premierleague.com/drf/bootstrap-static
  */
 export function getAllStaticData(): Promise<AllStaticData> {
   return fetchData('/bootstrap-static');
@@ -42,8 +68,7 @@ export function getAllStaticData(): Promise<AllStaticData> {
 
 /**
  * Teams (Premier Leaugue clubs)
- * https://fantasy.premierleague.com/drf/teams
- * @returns {Promise}
+ * @returns {Promise} If fulfilled returns an object mapped to https://fantasy.premierleague.com/drf/teams
  */
 export function getTeams(): Promise<Team[]> {
   return fetchData('/teams');
@@ -51,8 +76,7 @@ export function getTeams(): Promise<Team[]> {
 
 /**
  * Elements (players)
- * https://fantasy.premierleague.com/drf/elements
- * @returns {Promise}
+ * @returns {Promise} If fulfilled returns an object mapped to https://fantasy.premierleague.com/drf/elements
  */
 export function getElements(): Promise<Element[]> {
   return fetchData('/elements');
@@ -60,61 +84,37 @@ export function getElements(): Promise<Element[]> {
 
 /**
  * Element types
- * https://fantasy.premierleague.com/drf/elements-types
- * @returns {Promise}
+ * @returns {Promise} If fulfilled returns an object mapped to https://fantasy.premierleague.com/drf/elements-types
  */
 export function getElementTypes(): Promise<ElementType[]> {
   return fetchData('/element-types');
 }
 
 /**
- * Element types
- * https://fantasy.premierleague.com/drf/game-settings
- * @returns {Promise}
+ * Game settings
+ * @returns {Promise} If fulfilled returns an object mapped to https://fantasy.premierleague.com/drf/game-settings
  */
 export function getGameSettings(): Promise<GameSettings> {
   return fetchData('game-settings');
-
 }
 
 /**
- * Entry (Fpl manager team)
- * https://fantasy.premierleague.com/drf/entry/${id}/history
- * @param id Entry id
- * @returns {Promise}
+ * Event /gameweek details
+ * @returns {Promise} If fulfilled returns an object mapped to https://fantasy.premierleague.com/drf/event/${eventNumber}/live
  */
-export function getEntry(id: number): Promise<Entry> {
-  return fetchData(`/entry/${id}/history`);
-}
-/**
- * Entry event. Details of a particular event (or gameweek)
- * https://fantasy.premierleague.com/drf/entry/${id}/event/${eventNumber}
- * @param id Entry id
- * @param eventNumber The event / gameweek number
- * @returns {Promise}
- */
-export function getEntryEvent(id: number, eventNumber: number) {
-  return fetchData(`/entry/${id}/event/${eventNumber}`);
+export function getEvent(eventNumber: number): Promise<Event> {
+  return fetchData(`/event/${eventNumber}/live`);
 }
 
-/**
- * Entry transfers.
- * https://fantasy.premierleague.com/drf/entry/${id}/transfers
- * @param id Entry id
- * @returns {Promise}
- */
-export function getEntryTransfers(id: number) {
-  return fetchData(`/entry/${id}/transfers`);
-}
 
 /**
  * Classic league standings
  * https://fantasy.premierleague.com/drf/leagues-classic-standings/${id}
- * @param id League id
+ * @param leagueId League id
  * @returns {Promise}
  */
-export function getClassicLeagueStandings(id: number) {
-  return fetchData(`/leagues-classic-standings/${id}`);
+export function getClassicLeagueStandings(leagueId: number): Promise<League> {
+  return fetchData(`/leagues-classic-standings/${leagueId}`);
 }
 
 // all static data
@@ -444,6 +444,57 @@ export interface Entry {
   history: EntryHistory[];
 }
 
+
+export interface EntryEvent {
+  leagues: EntryLeagues;
+  entry_history: EntryHistory;
+  ce: number;
+  automatic_subs: EntryAutomaticSub[];
+  fixtures: Fixture[];
+  can_change_captain: boolean;
+  manager_subs: any[];
+  picks: EntryPick[];
+  own_entry: boolean;
+  state: EntryState;
+  points: number;
+  entry: Entry;
+  active_chip: string;
+}
+
+
+export interface EntryState {
+  event: number;
+  sub_state: string;
+  event_day: number;
+  deadline_time: Date;
+  deadline_time_formatted: string;
+}
+
+export interface EntryPick {
+  element: number;
+  position: number;
+  is_captain: boolean;
+  is_vice_captain: boolean;
+  can_sub?: any;
+  points: number;
+  has_played: boolean;
+  can_captain?: any;
+  explain: any[][];
+  is_sub: boolean;
+  element_type: number;
+  stats: Stats;
+  multiplier: number;
+}
+
+
+export interface EntryAutomaticSub {
+  id: number;
+  element_in: number;
+  element_out: number;
+  entry: number;
+  event: number;
+}
+
 export interface EntryDetails {
   id: number;
   player_first_name: string;
@@ -548,11 +599,124 @@ export interface EntryHistory {
 }
 
 
+export interface EntryTransfers {
+  wildcards: EntryWildcard[];
+  entry: Entry;
+  leagues: EntryLeagues;
+  history: EntryTransferHistory[];
+}
 
 
+export interface EntryWildcard {
+  played_time_formatted: string;
+  status: string;
+  name: string;
+  time: Date;
+  chip: number;
+  entry: number;
+  event: number;
+}
 
+export interface EntryTransferHistory {
+  id: number;
+  time_formatted: string;
+  time: Date;
+  element_in_cost: number;
+  element_out_cost: number;
+  element_in: number;
+  element_out: number;
+  entry: number;
+  event: number;
+}
 
+// stats
+export interface Stats {
+  yellow_cards: number;
+  own_goals: number;
+  creativity: number;
+  goals_conceded: number;
+  bonus: number;
+  red_cards: number;
+  saves: number;
+  influence: number;
+  bps: number;
+  clean_sheets: number;
+  assists: number;
+  ict_index: number;
+  goals_scored: number;
+  threat: number;
+  penalties_missed: number;
+  total_points: number;
+  penalties_saved: number;
+  in_dreamteam: boolean;
+  minutes: number;
+}
 
+// fixture
 
+export interface Fixture {
+  id: number;
+  kickoff_time_formatted: string;
+  started: boolean;
+  event_day: number;
+  deadline_time: Date;
+  deadline_time_formatted: string;
+  stats: FixtureStats;
+  code: number;
+  kickoff_time: Date;
+  team_h_score: number;
+  team_a_score: number;
+  finished: boolean;
+  minutes: number;
+  provisional_start_time: boolean;
+  finished_provisional: boolean;
+  event: number;
+  team_a: number;
+  team_h: number;
+}
+export interface FixtureStats {
+  goals_scored: FixtureStatHomeAndAway;
+  assists: FixtureStatHomeAndAway;
+  own_goals: FixtureStatHomeAndAway;
+  penalties_saved: FixtureStatHomeAndAway;
+  penalties_missed: FixtureStatHomeAndAway;
+  yellow_cards: FixtureStatHomeAndAway;
+  red_cards: FixtureStatHomeAndAway;
+  saves: FixtureStatHomeAndAway;
+  bonus: FixtureStatHomeAndAway;
+  bps: FixtureStatHomeAndAway;
+}
 
+export interface FixtureStatHomeAndAway {
+  a: FixtureStatValue[];
+  h: FixtureStatValue[];
+}
 
+export interface FixtureStatValue {
+  value: number;
+  element: number;
+}
+
+// event
+export interface Event {
+  fixtures: Fixture[];
+  elements: EventElements;
+}
+
+export interface EventElements {
+  [key: number]: EventElementDetails;
+}
+
+export interface EventElementDetails {
+  explain: EventElementDetailsExplanation[];
+  stats: Stats;
+}
+export interface EventElementDetailsExplanation {
+  [key: string]: EventElementDetailsExplanationDetails;
+}
+
+export interface EventElementDetailsExplanationDetails {
+  points: number;
+  name: string;
+  value: number;
+}
