@@ -29,13 +29,12 @@ function fetchData(path: string) {
 
 }
 
-
 /**
  * Entry (Fpl manager team): A promise that if fulfilled returns an object mapped to https://fantasy.premierleague.com/drf/entry/${id}/history
  * @param entryId Entry id
  * @returns {Promise}
  */
-export function getEntry(entryId: number): Promise<Entry> {
+export function getEntry(entryId: number): Promise<IApiEntry> {
   return fetchData(`/entry/${entryId}/history`);
 }
 /**
@@ -44,7 +43,7 @@ export function getEntry(entryId: number): Promise<Entry> {
  * @param eventNumber The event / gameweek number
  * @returns {Promise}
  */
-export function getEntryEvent(entryId: number, eventNumber: number): Promise<EntryEvent> {
+export function getEntryEvent(entryId: number, eventNumber: number): Promise<IApiEntryEvent> {
   return fetchData(`/entry/${entryId}/event/${eventNumber}`);
 }
 
@@ -53,7 +52,7 @@ export function getEntryEvent(entryId: number, eventNumber: number): Promise<Ent
  * @param entryId Entry id
  * @returns {Promise}
  */
-export function getEntryTransfers(entryId: number): Promise<EntryTransfers> {
+export function getEntryTransfers(entryId: number): Promise<IApiEntryTransfers> {
   return fetchData(`/entry/${entryId}/transfers`);
 }
 
@@ -61,16 +60,15 @@ export function getEntryTransfers(entryId: number): Promise<EntryTransfers> {
  * All static game data: A promise that if fulfilled returns an object mapped to https://fantasy.premierleague.com/drf/bootstrap-static
  * @returns {Promise}
  */
-export function getAllStaticData(): Promise<AllStaticData> {
+export function getAllStaticData(): Promise<IApiAllStaticData> {
   return fetchData('/bootstrap-static');
 }
-
 
 /**
  * Teams (Premier Leaugue clubs): A promise that if fulfilled returns an object mapped to https://fantasy.premierleague.com/drf/teams
  * @returns {Promise}
  */
-export function getTeams(): Promise<Team[]> {
+export function getTeams(): Promise<IApiTeam[]> {
   return fetchData('/teams');
 }
 
@@ -78,7 +76,7 @@ export function getTeams(): Promise<Team[]> {
  * Elements (players): A promise that if fulfilled returns an object mapped to https://fantasy.premierleague.com/drf/elements
  * @returns {Promise}
  */
-export function getElements(): Promise<Element[]> {
+export function getElements(): Promise<IApiElement[]> {
   return fetchData('/elements');
 }
 
@@ -86,7 +84,7 @@ export function getElements(): Promise<Element[]> {
  * Element types: A promise that if fulfilled returns an object mapped to https://fantasy.premierleague.com/drf/elements-types
  * @returns {Promise}
  */
-export function getElementTypes(): Promise<ElementType[]> {
+export function getElementTypes(): Promise<IApiElementType[]> {
   return fetchData('/element-types');
 }
 
@@ -94,7 +92,7 @@ export function getElementTypes(): Promise<ElementType[]> {
  * Game settings: A promise that if fulfilled returns an object mapped to https://fantasy.premierleague.com/drf/game-settings
  * @returns {Promise}
  */
-export function getGameSettings(): Promise<GameSettings> {
+export function getGameSettings(): Promise<IApiGameSettings> {
   return fetchData('game-settings');
 }
 
@@ -102,40 +100,50 @@ export function getGameSettings(): Promise<GameSettings> {
  * Event /gameweek details: A promise that if fulfilled returns an object mapped to https://fantasy.premierleague.com/drf/event/${eventNumber}/live
  * @returns {Promise}
  */
-export function getEvent(eventNumber: number): Promise<Event> {
+export function getEvent(eventNumber: number): Promise<IApiEvent> {
   return fetchData(`/event/${eventNumber}/live`);
 }
 
+export default {
+  getEntry,
+  getEntryEvent,
+  getEntryTransfers,
+  getAllStaticData,
+  getTeams,
+  getElements,
+  getElementTypes,
+  getGameSettings,
+  getEvent
+}
 
 /**
  * Classic league standings: A promise that if fulfilled returns an object mapped to https://fantasy.premierleague.com/drf/leagues-classic-standings/${id}
  * @param leagueId League id
  * @returns {Promise}
  */
-export function getClassicLeagueStandings(leagueId: number): Promise<League> {
+export function getClassicLeagueStandings(leagueId: number): Promise<IApiLeague> {
   return fetchData(`/leagues-classic-standings/${leagueId}`);
 }
 
 // all static data
-export interface AllStaticData {
-  phases: GamePhase[];
-  elements: Element[];
-  'game-settings': Game;
+export interface IApiAllStaticData {
+  phases: IApiGamePhase[];
+  elements: IApiElement[];
+  'game-settings': IApiGame;
   'total-players': number;
-  teams: Team[];
-  element_types: ElementType[];
-  events: GameEvent[];
+  teams: IApiTeam[];
+  element_types: IApiElementType[];
+  events: IApiGameEvent[];
 }
 
 // game interfaces
 
-
-export interface GameSettings {
-  game: Game;
-  element_type: GameElement;
+export interface IApiGameSettings {
+  game: IApiGame;
+  element_type: IApiGameElement;
 }
 
-export interface GameEvent {
+export interface IApiGameEvent {
   id: number;
   name: string;
   deadline_time: Date;
@@ -152,7 +160,7 @@ export interface GameEvent {
   is_next: boolean;
 }
 
-export interface Game {
+export interface IApiGame {
   scoring_ea_index: number;
   league_prefix_public: string;
   bps_tackles: number;
@@ -225,7 +233,7 @@ export interface Game {
   bps_red_cards: number;
   bps_winning_goals: number;
   league_join_public_max: number;
-  formations: GameFormations;
+  formations: IApiGameFormations;
   league_points_h2h_lose: number;
   currency_decimal_places: number;
   bps_errors_leading_to_goal_attempt: number;
@@ -248,7 +256,7 @@ export interface Game {
 }
 
 
-export interface GameElement {
+export interface IApiGameElement {
   scoring_clean_sheets: number;
   squad_min_play: number;
   scoring_goals_conceded: number;
@@ -259,14 +267,14 @@ export interface GameElement {
   squad_select: number;
 }
 
-export interface GamePhase {
+export interface IApiGamePhase {
   id: number;
   name: string;
   start_event: number;
   stop_event: number;
 }
 
-export interface GameFormations {
+export interface IApiGameFormations {
   '1-5-2-3': number[][];
   '1-5-3-2': number[][];
   '1-3-5-2': number[][];
@@ -279,7 +287,7 @@ export interface GameFormations {
 }
 
 // element interfaces
-export interface Element {
+export interface IApiElement {
   id: number;
   photo: string;
   web_name: string;
@@ -339,7 +347,7 @@ export interface Element {
   team: number;
 }
 
-export interface ElementType {
+export interface IApiElementType {
   id: number;
   singular_name: string;
   singular_name_short: string;
@@ -348,10 +356,10 @@ export interface ElementType {
 }
 
 // team interfaces
-export interface Team {
+export interface IApiTeam {
   id: number;
-  current_event_fixture: TeamFixture[];
-  next_event_fixture: TeamFixture[];
+  current_event_fixture: IApiTeamFixture[];
+  next_event_fixture: IApiTeamFixture[];
   name: string;
   code: number;
   short_name: string;
@@ -374,7 +382,7 @@ export interface Team {
   team_division: number;
 }
 
-export interface TeamFixture {
+export interface IApiTeamFixture {
   is_home: boolean;
   month: number;
   event_day: number;
@@ -384,14 +392,14 @@ export interface TeamFixture {
 }
 
 // league interfaces
-export interface League {
-  new_entries: LeagueStandings;
-  league: LeagueDetails;
-  standings: LeagueStandings;
+export interface IApiLeague {
+  new_entries: IApiLeagueStandings;
+  league: IApiLeagueDetails;
+  standings: IApiLeagueStandings;
   update_status: number;
 }
 
-export interface LeagueDetails {
+export interface IApiLeagueDetails {
   id: number;
   leagueban_set: any[];
   name: string;
@@ -409,14 +417,13 @@ export interface LeagueDetails {
   start_event: number;
 }
 
-export interface LeagueStandings {
+export interface IApiLeagueStandings {
   has_next: boolean;
   number: number;
-  results: LeaguePositions[];
+  results: IApiLeaguePositions[];
 }
 
-
-export interface LeaguePositions {
+export interface IApiLeaguePositions {
   id: number;
   entry_name: string;
   event_total: number;
@@ -435,33 +442,31 @@ export interface LeaguePositions {
 
 // entry interfaces
 
-export interface Entry {
-  chips: EntryChip[];
-  entry: EntryDetails;
-  leagues: EntryLeagues;
-  season: EntrySeason[];
-  history: EntryHistory[];
+export interface IApiEntry {
+  chips: IApiEntryChip[];
+  entry: IApiEntryDetails;
+  leagues: IApiEntryLeagues;
+  season: IApiEntrySeason[];
+  history: IApiEntryHistory[];
 }
 
-
-export interface EntryEvent {
-  leagues: EntryLeagues;
-  entry_history: EntryHistory;
+export interface IApiEntryEvent {
+  leagues: IApiEntryLeagues;
+  entry_history: IApiEntryHistory;
   ce: number;
-  automatic_subs: EntryAutomaticSub[];
-  fixtures: Fixture[];
+  automatic_subs: IApiEntryAutomaticSub[];
+  fixtures: IApiFixture[];
   can_change_captain: boolean;
   manager_subs: any[];
-  picks: EntryPick[];
+  picks: IApiEntryPick[];
   own_entry: boolean;
-  state: EntryState;
+  state: IApiEntryState;
   points: number;
-  entry: Entry;
+  entry: IApiEntry;
   active_chip: string;
 }
 
-
-export interface EntryState {
+export interface IApiEntryState {
   event: number;
   sub_state: string;
   event_day: number;
@@ -469,7 +474,7 @@ export interface EntryState {
   deadline_time_formatted: string;
 }
 
-export interface EntryPick {
+export interface IApiEntryPick {
   element: number;
   position: number;
   is_captain: boolean;
@@ -481,12 +486,11 @@ export interface EntryPick {
   explain: any[][];
   is_sub: boolean;
   element_type: number;
-  stats: Stats;
+  stats: IApiStats;
   multiplier: number;
 }
 
-
-export interface EntryAutomaticSub {
+export interface IApiEntryAutomaticSub {
   id: number;
   element_in: number;
   element_out: number;
@@ -494,7 +498,7 @@ export interface EntryAutomaticSub {
   event: number;
 }
 
-export interface EntryDetails {
+export interface IApiEntryDetails {
   id: number;
   player_first_name: string;
   player_last_name: string;
@@ -527,7 +531,7 @@ export interface EntryDetails {
   player: number;
 }
 
-export interface EntryLeague {
+export interface IApiEntryLeague {
   id: number;
   entry_rank: number;
   entry_last_rank: number;
@@ -553,13 +557,13 @@ export interface EntryLeague {
   start_event: number;
 }
 
-export interface EntryLeagues {
-  cup: EntryLeague[];
-  h2h: EntryLeague[];
-  classic: EntryLeague[];
+export interface IApiEntryLeagues {
+  cup: IApiEntryLeague[];
+  h2h: IApiEntryLeague[];
+  classic: IApiEntryLeague[];
 }
 
-export interface EntryChip {
+export interface IApiEntryChip {
   played_time_formatted: string;
   status: string;
   name: string;
@@ -570,7 +574,7 @@ export interface EntryChip {
 }
 
 
-export interface EntrySeason {
+export interface IApiEntrySeason {
   id: number;
   season_name: string;
   total_points: number;
@@ -579,7 +583,7 @@ export interface EntrySeason {
   player: number;
 }
 
-export interface EntryHistory {
+export interface IApiEntryHistory {
   id: number;
   movement: string;
   points: number;
@@ -597,16 +601,14 @@ export interface EntryHistory {
   event: number;
 }
 
-
-export interface EntryTransfers {
-  wildcards: EntryWildcard[];
-  entry: Entry;
-  leagues: EntryLeagues;
-  history: EntryTransferHistory[];
+export interface IApiEntryTransfers {
+  wildcards: IApiEntryWildcard[];
+  entry: IApiEntry;
+  leagues: IApiEntryLeagues;
+  history: IApiEntryTransferHistory[];
 }
 
-
-export interface EntryWildcard {
+export interface IApiEntryWildcard {
   played_time_formatted: string;
   status: string;
   name: string;
@@ -616,7 +618,7 @@ export interface EntryWildcard {
   event: number;
 }
 
-export interface EntryTransferHistory {
+export interface IApiEntryTransferHistory {
   id: number;
   time_formatted: string;
   time: Date;
@@ -629,7 +631,8 @@ export interface EntryTransferHistory {
 }
 
 // stats
-export interface Stats {
+
+export interface IApiStats {
   yellow_cards: number;
   own_goals: number;
   creativity: number;
@@ -653,14 +656,14 @@ export interface Stats {
 
 // fixture
 
-export interface Fixture {
+export interface IApiFixture {
   id: number;
   kickoff_time_formatted: string;
   started: boolean;
   event_day: number;
   deadline_time: Date;
   deadline_time_formatted: string;
-  stats: FixtureStats;
+  stats: IApiFixtureStats;
   code: number;
   kickoff_time: Date;
   team_h_score: number;
@@ -673,49 +676,48 @@ export interface Fixture {
   team_a: number;
   team_h: number;
 }
-export interface FixtureStats {
-  goals_scored: FixtureStatHomeAndAway;
-  assists: FixtureStatHomeAndAway;
-  own_goals: FixtureStatHomeAndAway;
-  penalties_saved: FixtureStatHomeAndAway;
-  penalties_missed: FixtureStatHomeAndAway;
-  yellow_cards: FixtureStatHomeAndAway;
-  red_cards: FixtureStatHomeAndAway;
-  saves: FixtureStatHomeAndAway;
-  bonus: FixtureStatHomeAndAway;
-  bps: FixtureStatHomeAndAway;
+
+export interface IApiFixtureStats {
+  goals_scored: IApiFixtureStatHomeAndAway;
+  assists: IApiFixtureStatHomeAndAway;
+  own_goals: IApiFixtureStatHomeAndAway;
+  penalties_saved: IApiFixtureStatHomeAndAway;
+  penalties_missed: IApiFixtureStatHomeAndAway;
+  yellow_cards: IApiFixtureStatHomeAndAway;
+  red_cards: IApiFixtureStatHomeAndAway;
+  saves: IApiFixtureStatHomeAndAway;
+  bonus: IApiFixtureStatHomeAndAway;
+  bps: IApiFixtureStatHomeAndAway;
 }
 
-export interface FixtureStatHomeAndAway {
-  a: FixtureStatValue[];
-  h: FixtureStatValue[];
+export interface IApiFixtureStatHomeAndAway {
+  a: IApiFixtureStatValue[];
+  h: IApiFixtureStatValue[];
 }
 
-export interface FixtureStatValue {
+export interface IApiFixtureStatValue {
   value: number;
   element: number;
 }
 
 // event
-export interface Event {
-  fixtures: Fixture[];
-  elements: EventElements;
+
+export interface IApiEvent {
+  fixtures: IApiFixture[];
+  elements: IApiEventElements;
 }
 
-export interface EventElements {
-  [key: number]: EventElementDetails;
+export interface IApiEventElements {
+  [key: number]: {
+    explain: IApiEventElementsExplain[];
+    stats: IApiStats;
+  }
 }
 
-export interface EventElementDetails {
-  explain: EventElementDetailsExplanation[];
-  stats: Stats;
-}
-export interface EventElementDetailsExplanation {
-  [key: string]: EventElementDetailsExplanationDetails;
-}
-
-export interface EventElementDetailsExplanationDetails {
-  points: number;
-  name: string;
-  value: number;
+export interface IApiEventElementsExplain {
+  [key: string]: {
+    points: number;
+    name: string;
+    value: number;
+  }
 }
