@@ -1,7 +1,7 @@
 {
   "name": "fpl-api-node",
   "version": "1.0.4",
-  "description": "A simple node wrapper for the fantasy.premierleague.com restful web api",
+  "description": "A simple node wrapper for the Fantasy Premier League (fantasy.premierleague.com) restful web api",
   "main": "lib/index.js",
   "typings": "lib/index",
   "files": [
@@ -30,8 +30,5 @@
     "@types/node-fetch": "^1.6.6",
     "node-fetch": "^1.6.3"
   },
-  "devDependencies": {
-    "tslint": "^4.0.2",
-    "typescript": "^2.1.4"
-  }
+  "devDependencies": {}
 }
