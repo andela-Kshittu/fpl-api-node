@@ -104,6 +104,18 @@ export function getEvent(eventNumber: number): Promise<IApiEvent> {
   return fetchData(`/event/${eventNumber}/live`);
 }
 
+/**
+ * Classic league standings: A promise that if fulfilled returns an object mapped to https://fantasy.premierleague.com/drf/leagues-classic-standings/${id}
+ * @param leagueId League id
+ * @returns {Promise}
+ */
+export function getClassicLeagueStandings(leagueId: number): Promise<IApiLeague> {
+  return fetchData(`/leagues-classic-standings/${leagueId}`);
+}
+
+/**
+ * Export defaults
+ */
 export default {
   getEntry,
   getEntryEvent,
@@ -113,17 +125,13 @@ export default {
   getElements,
   getElementTypes,
   getGameSettings,
-  getEvent
+  getEvent,
+  getClassicLeagueStandings
 }
 
 /**
- * Classic league standings: A promise that if fulfilled returns an object mapped to https://fantasy.premierleague.com/drf/leagues-classic-standings/${id}
- * @param leagueId League id
- * @returns {Promise}
+ * Export interfaces
  */
-export function getClassicLeagueStandings(leagueId: number): Promise<IApiLeague> {
-  return fetchData(`/leagues-classic-standings/${leagueId}`);
-}
 
 // all static data
 export interface IApiAllStaticData {
