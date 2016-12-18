@@ -27,10 +27,10 @@ const fplapi = require('fpl-api-node');
 ### Example
 
 ```js
-fplapi.getEntry(123456).then((entry) => {
+fplapi.getEntry(123456).then((data) => {
 
     // do something with our data
-    console.log(entry);
+    console.log(data);
 
 }).catch((err) => {
     // something went wrong
