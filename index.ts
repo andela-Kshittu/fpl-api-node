@@ -470,7 +470,7 @@ export interface IApiEntryEvent {
   own_entry: boolean;
   state: IApiEntryState;
   points: number;
-  entry: IApiEntry;
+  entry: IApiEntryDetails;
   active_chip: string;
 }
 
