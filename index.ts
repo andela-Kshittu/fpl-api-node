@@ -3,33 +3,6 @@
 import fetch from 'node-fetch';
 
 /**
- * @module fplApiNode
- */
-
-/**
- * Returns a promise that if fulfilled returns json object mapped to the given request
- * @param path The path of the rest web api request
- * @returns {Promise}
- * @private
- * @hidden
- */
-function fetchData(path: string) {
-
-  return new Promise((resolve, reject) => {
-
-    fetch(`https://fantasy.premierleague.com/drf/${path}`).then((res) => {
-      return res.json();
-    }).then((json) => {
-      resolve(json);
-    }).catch((err) => {
-      reject(err);
-    });
-
-  });
-
-}
-
-/**
  * Entry (Fpl manager team): A promise that if fulfilled returns an object mapped to https://fantasy.premierleague.com/drf/entry/${id}/history
  * @param entryId Entry id
  * @returns {Promise}
@@ -114,19 +87,25 @@ export function getClassicLeagueStandings(leagueId: number): Promise<IApiLeague>
 }
 
 /**
- * Export defaults
+ * Returns a promise that if fulfilled returns json object mapped to the given request
+ * @param path The path of the rest web api request
+ * @returns {Promise}
+ * @private
  */
-export default {
-  getEntry,
-  getEntryEvent,
-  getEntryTransfers,
-  getAllStaticData,
-  getTeams,
-  getElements,
-  getElementTypes,
-  getGameSettings,
-  getEvent,
-  getClassicLeagueStandings
+function fetchData(path: string) {
+
+  return new Promise((resolve, reject) => {
+
+    fetch(`https://fantasy.premierleague.com/drf/${path}`).then((res) => {
+      return res.json();
+    }).then((json) => {
+      resolve(json);
+    }).catch((err) => {
+      reject(err);
+    });
+
+  });
+
 }
 
 /**
