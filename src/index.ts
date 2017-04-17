@@ -2,7 +2,7 @@
 
 import fetch from 'node-fetch';
 
-export class FplDataApi {
+export class FplApi {
 
   /**
    * Entry (Fpl manager team):

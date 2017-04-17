@@ -14,13 +14,13 @@ npm install fpl-api-node --save
 The package is written in typescript and can be consumed either strongly-typed or in plain Javascript.
 
 ```js
-const { FplDataApi } = require('fpl-api-node');
+const { FplApi } = require('fpl-api-node');
 ```
 
 ### Example
 
 ```js
-FplDataApi.getEntry(123456).then((data) => {
+FplApi.getEntry(123456).then((data) => {
 
     // do something with our data
     console.log(data);
