@@ -68,6 +68,12 @@
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
+							<h3>Classes</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-class"><a href="classes/fpldataapi.html" class="tsd-kind-icon">Fpl<wbr>Data<wbr>Api</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
 							<h3>Interfaces</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-interface"><a href="interfaces/iapiallstaticdata.html" class="tsd-kind-icon">IApi<wbr>All<wbr>Static<wbr>Data</a></li>
@@ -109,293 +115,7 @@
 								<li class="tsd-kind-interface"><a href="interfaces/iapiteamfixture.html" class="tsd-kind-icon">IApi<wbr>Team<wbr>Fixture</a></li>
 							</ul>
 						</section>
-						<section class="tsd-index-section ">
-							<h3>Functions</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-function"><a href="index.html#getallstaticdata" class="tsd-kind-icon">get<wbr>All<wbr>Static<wbr>Data</a></li>
-								<li class="tsd-kind-function"><a href="index.html#getclassicleaguestandings" class="tsd-kind-icon">get<wbr>Classic<wbr>League<wbr>Standings</a></li>
-								<li class="tsd-kind-function"><a href="index.html#getelementtypes" class="tsd-kind-icon">get<wbr>Element<wbr>Types</a></li>
-								<li class="tsd-kind-function"><a href="index.html#getelements" class="tsd-kind-icon">get<wbr>Elements</a></li>
-								<li class="tsd-kind-function"><a href="index.html#getentry" class="tsd-kind-icon">get<wbr>Entry</a></li>
-								<li class="tsd-kind-function"><a href="index.html#getentryevent" class="tsd-kind-icon">get<wbr>Entry<wbr>Event</a></li>
-								<li class="tsd-kind-function"><a href="index.html#getentrytransfers" class="tsd-kind-icon">get<wbr>Entry<wbr>Transfers</a></li>
-								<li class="tsd-kind-function"><a href="index.html#getevent" class="tsd-kind-icon">get<wbr>Event</a></li>
-								<li class="tsd-kind-function"><a href="index.html#getgamesettings" class="tsd-kind-icon">get<wbr>Game<wbr>Settings</a></li>
-								<li class="tsd-kind-function"><a href="index.html#getteams" class="tsd-kind-icon">get<wbr>Teams</a></li>
-							</ul>
-						</section>
 					</div>
-				</section>
-			</section>
-			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Functions</h2>
-				<section class="tsd-panel tsd-member tsd-kind-function">
-					<a name="getallstaticdata" class="tsd-anchor"></a>
-					<h3>get<wbr>All<wbr>Static<wbr>Data</h3>
-					<ul class="tsd-signatures tsd-kind-function">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>All<wbr>Static<wbr>Data<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="interfaces/iapiallstaticdata.html" class="tsd-signature-type">IApiAllStaticData</a><span class="tsd-signature-symbol">&gt;</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/tgreyuk/fpl-api-node/blob/a06854b/index.ts#L63">index.ts:63</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>All static game data: A promise that if fulfilled returns an object mapped to <a href="https://fantasy.premierleague.com/drf/bootstrap-static">https://fantasy.premierleague.com/drf/bootstrap-static</a></p>
-								</div>
-							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="interfaces/iapiallstaticdata.html" class="tsd-signature-type">IApiAllStaticData</a><span class="tsd-signature-symbol">&gt;</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function">
-					<a name="getclassicleaguestandings" class="tsd-anchor"></a>
-					<h3>get<wbr>Classic<wbr>League<wbr>Standings</h3>
-					<ul class="tsd-signatures tsd-kind-function">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Classic<wbr>League<wbr>Standings<span class="tsd-signature-symbol">(</span>leagueId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="interfaces/iapileague.html" class="tsd-signature-type">IApiLeague</a><span class="tsd-signature-symbol">&gt;</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/tgreyuk/fpl-api-node/blob/a06854b/index.ts#L112">index.ts:112</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Classic league standings: A promise that if fulfilled returns an object mapped to <a href="https://fantasy.premierleague.com/drf/leagues-classic-standings/${id}">https://fantasy.premierleague.com/drf/leagues-classic-standings/${id}</a></p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>leagueId: <span class="tsd-signature-type">number</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>League id</p>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="interfaces/iapileague.html" class="tsd-signature-type">IApiLeague</a><span class="tsd-signature-symbol">&gt;</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function">
-					<a name="getelementtypes" class="tsd-anchor"></a>
-					<h3>get<wbr>Element<wbr>Types</h3>
-					<ul class="tsd-signatures tsd-kind-function">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Element<wbr>Types<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="interfaces/iapielementtype.html" class="tsd-signature-type">IApiElementType</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/tgreyuk/fpl-api-node/blob/a06854b/index.ts#L87">index.ts:87</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Element types: A promise that if fulfilled returns an object mapped to <a href="https://fantasy.premierleague.com/drf/elements-types">https://fantasy.premierleague.com/drf/elements-types</a></p>
-								</div>
-							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="interfaces/iapielementtype.html" class="tsd-signature-type">IApiElementType</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function">
-					<a name="getelements" class="tsd-anchor"></a>
-					<h3>get<wbr>Elements</h3>
-					<ul class="tsd-signatures tsd-kind-function">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Elements<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="interfaces/iapielement.html" class="tsd-signature-type">IApiElement</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/tgreyuk/fpl-api-node/blob/a06854b/index.ts#L79">index.ts:79</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Elements (players): A promise that if fulfilled returns an object mapped to <a href="https://fantasy.premierleague.com/drf/elements">https://fantasy.premierleague.com/drf/elements</a></p>
-								</div>
-							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="interfaces/iapielement.html" class="tsd-signature-type">IApiElement</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function">
-					<a name="getentry" class="tsd-anchor"></a>
-					<h3>get<wbr>Entry</h3>
-					<ul class="tsd-signatures tsd-kind-function">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Entry<span class="tsd-signature-symbol">(</span>entryId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="interfaces/iapientry.html" class="tsd-signature-type">IApiEntry</a><span class="tsd-signature-symbol">&gt;</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/tgreyuk/fpl-api-node/blob/a06854b/index.ts#L37">index.ts:37</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Entry (Fpl manager team): A promise that if fulfilled returns an object mapped to <a href="https://fantasy.premierleague.com/drf/entry/${id}/history">https://fantasy.premierleague.com/drf/entry/${id}/history</a></p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>entryId: <span class="tsd-signature-type">number</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>Entry id</p>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="interfaces/iapientry.html" class="tsd-signature-type">IApiEntry</a><span class="tsd-signature-symbol">&gt;</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function">
-					<a name="getentryevent" class="tsd-anchor"></a>
-					<h3>get<wbr>Entry<wbr>Event</h3>
-					<ul class="tsd-signatures tsd-kind-function">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Entry<wbr>Event<span class="tsd-signature-symbol">(</span>entryId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, eventNumber<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="interfaces/iapientryevent.html" class="tsd-signature-type">IApiEntryEvent</a><span class="tsd-signature-symbol">&gt;</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/tgreyuk/fpl-api-node/blob/a06854b/index.ts#L46">index.ts:46</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Entry event. Details of a particular event (or gameweek): A promise that if fulfilled returns an object mapped to <a href="https://fantasy.premierleague.com/drf/entry/${id}/event/${eventNumber}">https://fantasy.premierleague.com/drf/entry/${id}/event/${eventNumber}</a></p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>entryId: <span class="tsd-signature-type">number</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>Entry id</p>
-									</div>
-								</li>
-								<li>
-									<h5>eventNumber: <span class="tsd-signature-type">number</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>The event / gameweek number</p>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="interfaces/iapientryevent.html" class="tsd-signature-type">IApiEntryEvent</a><span class="tsd-signature-symbol">&gt;</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function">
-					<a name="getentrytransfers" class="tsd-anchor"></a>
-					<h3>get<wbr>Entry<wbr>Transfers</h3>
-					<ul class="tsd-signatures tsd-kind-function">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Entry<wbr>Transfers<span class="tsd-signature-symbol">(</span>entryId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="interfaces/iapientrytransfers.html" class="tsd-signature-type">IApiEntryTransfers</a><span class="tsd-signature-symbol">&gt;</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/tgreyuk/fpl-api-node/blob/a06854b/index.ts#L55">index.ts:55</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Entry transfers: A promise that if fulfilled returns an object mapped to <a href="https://fantasy.premierleague.com/drf/entry/${id}/transfers">https://fantasy.premierleague.com/drf/entry/${id}/transfers</a></p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>entryId: <span class="tsd-signature-type">number</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>Entry id</p>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="interfaces/iapientrytransfers.html" class="tsd-signature-type">IApiEntryTransfers</a><span class="tsd-signature-symbol">&gt;</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function">
-					<a name="getevent" class="tsd-anchor"></a>
-					<h3>get<wbr>Event</h3>
-					<ul class="tsd-signatures tsd-kind-function">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Event<span class="tsd-signature-symbol">(</span>eventNumber<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="interfaces/iapievent.html" class="tsd-signature-type">IApiEvent</a><span class="tsd-signature-symbol">&gt;</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/tgreyuk/fpl-api-node/blob/a06854b/index.ts#L103">index.ts:103</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Event /gameweek details: A promise that if fulfilled returns an object mapped to <a href="https://fantasy.premierleague.com/drf/event/${eventNumber}/live">https://fantasy.premierleague.com/drf/event/${eventNumber}/live</a></p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>eventNumber: <span class="tsd-signature-type">number</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="interfaces/iapievent.html" class="tsd-signature-type">IApiEvent</a><span class="tsd-signature-symbol">&gt;</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function">
-					<a name="getgamesettings" class="tsd-anchor"></a>
-					<h3>get<wbr>Game<wbr>Settings</h3>
-					<ul class="tsd-signatures tsd-kind-function">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Game<wbr>Settings<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="interfaces/iapigamesettings.html" class="tsd-signature-type">IApiGameSettings</a><span class="tsd-signature-symbol">&gt;</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/tgreyuk/fpl-api-node/blob/a06854b/index.ts#L95">index.ts:95</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Game settings: A promise that if fulfilled returns an object mapped to <a href="https://fantasy.premierleague.com/drf/game-settings">https://fantasy.premierleague.com/drf/game-settings</a></p>
-								</div>
-							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="interfaces/iapigamesettings.html" class="tsd-signature-type">IApiGameSettings</a><span class="tsd-signature-symbol">&gt;</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function">
-					<a name="getteams" class="tsd-anchor"></a>
-					<h3>get<wbr>Teams</h3>
-					<ul class="tsd-signatures tsd-kind-function">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Teams<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="interfaces/iapiteam.html" class="tsd-signature-type">IApiTeam</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/tgreyuk/fpl-api-node/blob/a06854b/index.ts#L71">index.ts:71</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Teams (Premier Leaugue clubs): A promise that if fulfilled returns an object mapped to <a href="https://fantasy.premierleague.com/drf/teams">https://fantasy.premierleague.com/drf/teams</a></p>
-								</div>
-							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="interfaces/iapiteam.html" class="tsd-signature-type">IApiTeam</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
-						</li>
-					</ul>
 				</section>
 			</section>
 		</div>
@@ -409,6 +129,9 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-class">
+						<a href="classes/fpldataapi.html" class="tsd-kind-icon">Fpl<wbr>Data<wbr>Api</a>
+					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/iapiallstaticdata.html" class="tsd-kind-icon">IApi<wbr>All<wbr>Static<wbr>Data</a>
 					</li>
@@ -519,36 +242,6 @@
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/iapiteamfixture.html" class="tsd-kind-icon">IApi<wbr>Team<wbr>Fixture</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="index.html#getallstaticdata" class="tsd-kind-icon">get<wbr>All<wbr>Static<wbr>Data</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="index.html#getclassicleaguestandings" class="tsd-kind-icon">get<wbr>Classic<wbr>League<wbr>Standings</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="index.html#getelementtypes" class="tsd-kind-icon">get<wbr>Element<wbr>Types</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="index.html#getelements" class="tsd-kind-icon">get<wbr>Elements</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="index.html#getentry" class="tsd-kind-icon">get<wbr>Entry</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="index.html#getentryevent" class="tsd-kind-icon">get<wbr>Entry<wbr>Event</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="index.html#getentrytransfers" class="tsd-kind-icon">get<wbr>Entry<wbr>Transfers</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="index.html#getevent" class="tsd-kind-icon">get<wbr>Event</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="index.html#getgamesettings" class="tsd-kind-icon">get<wbr>Game<wbr>Settings</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="index.html#getteams" class="tsd-kind-icon">get<wbr>Teams</a>
 					</li>
 				</ul>
 			</nav>
