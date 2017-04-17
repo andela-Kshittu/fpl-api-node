@@ -2,131 +2,134 @@
 
 import fetch from 'node-fetch';
 
-/**
- * Entry (Fpl manager team):
- * A promise that if fulfilled returns an object
- * Mapped to https://fantasy.premierleague.com/drf/entry/${id}/history
- * @param entryId Entry id
- * @returns {Promise}
- */
-export function getEntry(entryId: number): Promise<IApiEntry> {
-  return fetchData(`/entry/${entryId}/history`);
-}
+export class FplDataApi {
 
-/**
- * Entry event:
- * Details of a particular event (or gameweek):
- * A promise that if fulfilled returns an object
- * Mapped to https://fantasy.premierleague.com/drf/entry/${id}/event/${eventNumber}
- * @param entryId Entry id
- * @param eventNumber The event / gameweek number
- * @returns {Promise}
- */
-export function getEntryEvent(entryId: number, eventNumber: number): Promise<IApiEntryEvent> {
-  return fetchData(`/entry/${entryId}/event/${eventNumber}`);
-}
+  /**
+   * Entry (Fpl manager team):
+   * A promise that if fulfilled returns an object
+   * mapped to https://fantasy.premierleague.com/drf/entry/${id}/history
+   * @param entryId Entry id
+   * @returns {Promise}
+   */
+  public static getEntry(entryId: number): Promise<IApiEntry> {
+    return this.fetchData(`/entry/${entryId}/history`);
+  }
 
-/**
- * Entry transfers:
- * A promise that if fulfilled returns an object
- * Mapped to https://fantasy.premierleague.com/drf/entry/${id}/transfers
- * @param entryId Entry id
- * @returns {Promise}
- */
-export function getEntryTransfers(entryId: number): Promise<IApiEntryTransfers> {
-  return fetchData(`/entry/${entryId}/transfers`);
-}
+  /**
+   * Entry event:
+   * Details of a particular event (or gameweek):
+   * A promise that if fulfilled returns an object
+   * mapped to https://fantasy.premierleague.com/drf/entry/${id}/event/${eventNumber}
+   * @param entryId Entry id
+   * @param eventNumber The event / gameweek number
+   * @returns {Promise}
+   */
+  public static getEntryEvent(entryId: number, eventNumber: number): Promise<IApiEntryEvent> {
+    return this.fetchData(`/entry/${entryId}/event/${eventNumber}`);
+  }
 
-/**
- * All static game data:
- * A promise that if fulfilled returns an object
- * Mapped to https://fantasy.premierleague.com/drf/bootstrap-static
- * @returns {Promise}
- */
-export function getAllStaticData(): Promise<IApiAllStaticData> {
-  return fetchData('/bootstrap-static');
-}
+  /**
+   * Entry transfers:
+   * A promise that if fulfilled returns an object
+   * mapped to https://fantasy.premierleague.com/drf/entry/${id}/transfers
+   * @param entryId Entry id
+   * @returns {Promise}
+   */
+  public static getEntryTransfers(entryId: number): Promise<IApiEntryTransfers> {
+    return this.fetchData(`/entry/${entryId}/transfers`);
+  }
 
-/**
- * Teams (Premier Leaugue clubs):
- * A promise that if fulfilled returns an object
- * Mapped to https://fantasy.premierleague.com/drf/teams
- * @returns {Promise}
- */
-export function getTeams(): Promise<IApiTeam[]> {
-  return fetchData('/teams');
-}
+  /**
+   * All static game data:
+   * A promise that if fulfilled returns an object
+   * mapped to https://fantasy.premierleague.com/drf/bootstrap-static
+   * @returns {Promise}
+   */
+  public static getAllStaticData(): Promise<IApiAllStaticData> {
+    return this.fetchData('/bootstrap-static');
+  }
 
-/**
- * Elements (players):
- * A promise that if fulfilled returns an object
- * Mapped to https://fantasy.premierleague.com/drf/elements
- * @returns {Promise}
- */
-export function getElements(): Promise<IApiElement[]> {
-  return fetchData('/elements');
-}
+  /**
+   * Teams (Premier Leaugue clubs):
+   * A promise that if fulfilled returns an object
+   * mapped to https://fantasy.premierleague.com/drf/teams
+   * @returns {Promise}
+   */
+  public static getTeams(): Promise<IApiTeam[]> {
+    return this.fetchData('/teams');
+  }
 
-/**
- * Element types: A promise that if fulfilled returns an object
- * Mapped to https://fantasy.premierleague.com/drf/elements-types
- * @returns {Promise}
- */
-export function getElementTypes(): Promise<IApiElementType[]> {
-  return fetchData('/element-types');
-}
+  /**
+   * Elements (players):
+   * A promise that if fulfilled returns an object
+   * mapped to https://fantasy.premierleague.com/drf/elements
+   * @returns {Promise}
+   */
+  public static getElements(): Promise<IApiElement[]> {
+    return this.fetchData('/elements');
+  }
 
-/**
- * Game settings:
- * A promise that if fulfilled returns an object
- * Mapped to https://fantasy.premierleague.com/drf/game-settings
- * @returns {Promise}
- */
-export function getGameSettings(): Promise<IApiGameSettings> {
-  return fetchData('game-settings');
-}
+  /**
+   * Element types: A promise that if fulfilled returns an object
+   * mapped to https://fantasy.premierleague.com/drf/elements-types
+   * @returns {Promise}
+   */
+  public static getElementTypes(): Promise<IApiElementType[]> {
+    return this.fetchData('/element-types');
+  }
 
-/**
- * Event /gameweek details:
- * A promise that if fulfilled returns an object
- * Mapped to https://fantasy.premierleague.com/drf/event/${eventNumber}/live
- * @returns {Promise}
- */
-export function getEvent(eventNumber: number): Promise<IApiEvent> {
-  return fetchData(`/event/${eventNumber}/live`);
-}
+  /**
+   * Game settings:
+   * A promise that if fulfilled returns an object
+   * mapped to https://fantasy.premierleague.com/drf/game-settings
+   * @returns {Promise}
+   */
+  public static getGameSettings(): Promise<IApiGameSettings> {
+    return this.fetchData('game-settings');
+  }
 
-/**
- * Classic league standings:
- * A promise that if fulfilled returns an object
- * Mapped to https://fantasy.premierleague.com/drf/leagues-classic-standings/${id}
- * @param leagueId League id
- * @returns {Promise}
- */
-export function getClassicLeagueStandings(leagueId: number): Promise<IApiLeague> {
-  return fetchData(`/leagues-classic-standings/${leagueId}`);
-}
+  /**
+   * Event /gameweek details:
+   * A promise that if fulfilled returns an object
+   * mapped to https://fantasy.premierleague.com/drf/event/${eventNumber}/live
+   * @returns {Promise}
+   */
+  public static getEvent(eventNumber: number): Promise<IApiEvent> {
+    return this.fetchData(`/event/${eventNumber}/live`);
+  }
 
-/**
- * Returns a promise that if fulfilled returns json object mapped to the given request
- * @param path The path of the rest web api request
- * @returns {Promise}
- * @private
- * @hidden
- */
-function fetchData(path: string) {
+  /**
+   * Classic league standings:
+   * A promise that if fulfilled returns an object
+   * mapped to https://fantasy.premierleague.com/drf/leagues-classic-standings/${id}
+   * @param leagueId League id
+   * @returns {Promise}
+   */
+  public static getClassicLeagueStandings(leagueId: number): Promise<IApiLeague> {
+    return this.fetchData(`/leagues-classic-standings/${leagueId}`);
+  }
 
-  return new Promise((resolve, reject) => {
+  /**
+   * Returns a promise that if fulfilled returns json object mapped to the given request
+   * @param path The path of the rest web api request
+   * @returns {Promise}
+   * @private
+   */
+  private static fetchData(path: string) {
 
-    fetch(`https://fantasy.premierleague.com/drf/${path}`).then((res) => {
-      return res.json();
-    }).then((json) => {
-      resolve(json);
-    }).catch((err) => {
-      reject(err);
+    return new Promise((resolve: any, reject: any) => {
+
+      fetch(`https://fantasy.premierleague.com/drf/${path}`).then((res) => {
+        return res.json();
+      }).then((json) => {
+        resolve(json);
+      }).catch((err) => {
+        reject(err);
+      });
+
     });
 
-  });
+  }
 
 }
 
