@@ -3,15 +3,21 @@
 import fetch from 'node-fetch';
 
 /**
- * Entry (Fpl manager team): A promise that if fulfilled returns an object mapped to https://fantasy.premierleague.com/drf/entry/${id}/history
+ * Entry (Fpl manager team):
+ * A promise that if fulfilled returns an object
+ * Mapped to https://fantasy.premierleague.com/drf/entry/${id}/history
  * @param entryId Entry id
  * @returns {Promise}
  */
 export function getEntry(entryId: number): Promise<IApiEntry> {
   return fetchData(`/entry/${entryId}/history`);
 }
+
 /**
- * Entry event. Details of a particular event (or gameweek): A promise that if fulfilled returns an object mapped to https://fantasy.premierleague.com/drf/entry/${id}/event/${eventNumber}
+ * Entry event:
+ * Details of a particular event (or gameweek):
+ * A promise that if fulfilled returns an object
+ * Mapped to https://fantasy.premierleague.com/drf/entry/${id}/event/${eventNumber}
  * @param entryId Entry id
  * @param eventNumber The event / gameweek number
  * @returns {Promise}
@@ -21,7 +27,9 @@ export function getEntryEvent(entryId: number, eventNumber: number): Promise<IAp
 }
 
 /**
- * Entry transfers: A promise that if fulfilled returns an object mapped to https://fantasy.premierleague.com/drf/entry/${id}/transfers
+ * Entry transfers:
+ * A promise that if fulfilled returns an object
+ * Mapped to https://fantasy.premierleague.com/drf/entry/${id}/transfers
  * @param entryId Entry id
  * @returns {Promise}
  */
@@ -30,7 +38,9 @@ export function getEntryTransfers(entryId: number): Promise<IApiEntryTransfers> 
 }
 
 /**
- * All static game data: A promise that if fulfilled returns an object mapped to https://fantasy.premierleague.com/drf/bootstrap-static
+ * All static game data:
+ * A promise that if fulfilled returns an object
+ * Mapped to https://fantasy.premierleague.com/drf/bootstrap-static
  * @returns {Promise}
  */
 export function getAllStaticData(): Promise<IApiAllStaticData> {
@@ -38,7 +48,9 @@ export function getAllStaticData(): Promise<IApiAllStaticData> {
 }
 
 /**
- * Teams (Premier Leaugue clubs): A promise that if fulfilled returns an object mapped to https://fantasy.premierleague.com/drf/teams
+ * Teams (Premier Leaugue clubs):
+ * A promise that if fulfilled returns an object
+ * Mapped to https://fantasy.premierleague.com/drf/teams
  * @returns {Promise}
  */
 export function getTeams(): Promise<IApiTeam[]> {
@@ -46,7 +58,9 @@ export function getTeams(): Promise<IApiTeam[]> {
 }
 
 /**
- * Elements (players): A promise that if fulfilled returns an object mapped to https://fantasy.premierleague.com/drf/elements
+ * Elements (players):
+ * A promise that if fulfilled returns an object
+ * Mapped to https://fantasy.premierleague.com/drf/elements
  * @returns {Promise}
  */
 export function getElements(): Promise<IApiElement[]> {
@@ -54,7 +68,8 @@ export function getElements(): Promise<IApiElement[]> {
 }
 
 /**
- * Element types: A promise that if fulfilled returns an object mapped to https://fantasy.premierleague.com/drf/elements-types
+ * Element types: A promise that if fulfilled returns an object
+ * Mapped to https://fantasy.premierleague.com/drf/elements-types
  * @returns {Promise}
  */
 export function getElementTypes(): Promise<IApiElementType[]> {
@@ -62,7 +77,9 @@ export function getElementTypes(): Promise<IApiElementType[]> {
 }
 
 /**
- * Game settings: A promise that if fulfilled returns an object mapped to https://fantasy.premierleague.com/drf/game-settings
+ * Game settings:
+ * A promise that if fulfilled returns an object
+ * Mapped to https://fantasy.premierleague.com/drf/game-settings
  * @returns {Promise}
  */
 export function getGameSettings(): Promise<IApiGameSettings> {
@@ -70,7 +87,9 @@ export function getGameSettings(): Promise<IApiGameSettings> {
 }
 
 /**
- * Event /gameweek details: A promise that if fulfilled returns an object mapped to https://fantasy.premierleague.com/drf/event/${eventNumber}/live
+ * Event /gameweek details:
+ * A promise that if fulfilled returns an object
+ * Mapped to https://fantasy.premierleague.com/drf/event/${eventNumber}/live
  * @returns {Promise}
  */
 export function getEvent(eventNumber: number): Promise<IApiEvent> {
@@ -78,7 +97,9 @@ export function getEvent(eventNumber: number): Promise<IApiEvent> {
 }
 
 /**
- * Classic league standings: A promise that if fulfilled returns an object mapped to https://fantasy.premierleague.com/drf/leagues-classic-standings/${id}
+ * Classic league standings:
+ * A promise that if fulfilled returns an object
+ * Mapped to https://fantasy.premierleague.com/drf/leagues-classic-standings/${id}
  * @param leagueId League id
  * @returns {Promise}
  */
@@ -91,6 +112,7 @@ export function getClassicLeagueStandings(leagueId: number): Promise<IApiLeague>
  * @param path The path of the rest web api request
  * @returns {Promise}
  * @private
+ * @hidden
  */
 function fetchData(path: string) {
 
@@ -241,7 +263,6 @@ export interface IApiGame {
   bps_penalties_missed: number;
   scoring_saves_limit: number;
 }
-
 
 export interface IApiGameElement {
   scoring_clean_sheets: number;
@@ -560,7 +581,6 @@ export interface IApiEntryChip {
   event: number;
 }
 
-
 export interface IApiEntrySeason {
   id: number;
   season_name: string;
@@ -698,7 +718,7 @@ export interface IApiEventElements {
   [key: number]: {
     explain: IApiEventElementsExplain[];
     stats: IApiStats;
-  }
+  };
 }
 
 export interface IApiEventElementsExplain {
@@ -706,5 +726,5 @@ export interface IApiEventElementsExplain {
     points: number;
     name: string;
     value: number;
-  }
+  };
 }
