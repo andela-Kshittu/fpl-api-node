@@ -2,10 +2,10 @@
   "name": "fpl-api-node",
   "version": "1.0.7",
   "description": "A simple node wrapper for the Fantasy Premier League (fantasy.premierleague.com) restful web api",
-  "main": "lib/index.js",
-  "typings": "lib/index",
+  "main": "dist/index.js",
+  "typings": "dist/index",
   "files": [
-    "lib/"
+    "dist/"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -27,8 +27,9 @@
   },
   "homepage": "https://github.com/tgreyuk/fpl-api-node#readme",
   "dependencies": {
-    "@types/node-fetch": "^1.6.6",
     "node-fetch": "^1.6.3"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@types/node-fetch": "^1.6.7"
+  }
 }
