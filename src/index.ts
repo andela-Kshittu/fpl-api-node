@@ -1,161 +1,171 @@
 'use strict';
 
+/**
+ * Available end-points
+ * https://fantasy.premierleague.com/drf/bootstrap-static
+ * https://fantasy.premierleague.com/drf/entry/${id}/history
+ * https://fantasy.premierleague.com/drf/entry/${id}/event/${eventNumber}
+ * https://fantasy.premierleague.com/drf/entry/${id}/transfers
+ * https://fantasy.premierleague.com/drf/teams
+ * https://fantasy.premierleague.com/drf/elements
+ * https://fantasy.premierleague.com/drf/elements-types
+ * https://fantasy.premierleague.com/drf/game-settings
+ * https://fantasy.premierleague.com/drf/event/${eventNumber}/live
+ * https://fantasy.premierleague.com/drf/leagues-classic-standings/${id}
+ */
+
 import fetch from 'node-fetch';
 
-export class FplApi {
+/**
+ * Entry (Fpl manager team):
+ * A promise that if fulfilled returns an object
+ * mapped to https://fantasy.premierleague.com/drf/entry/${id}/history
+ * @param entryId Entry id
+ * @returns {Promise}
+ */
+export function fetchEntry(entryId: number): Promise<Entry> {
+  return fetchData(`/entry/${entryId}/history`);
+}
 
-  /**
-   * Entry (Fpl manager team):
-   * A promise that if fulfilled returns an object
-   * mapped to https://fantasy.premierleague.com/drf/entry/${id}/history
-   * @param entryId Entry id
-   * @returns {Promise}
-   */
-  public static getEntry(entryId: number): Promise<IApiEntry> {
-    return this.fetchData(`/entry/${entryId}/history`);
-  }
+/**
+ * Entry event:
+ * Details of a particular event (or gameweek):
+ * A promise that if fulfilled returns an object
+ * mapped to https://fantasy.premierleague.com/drf/entry/${id}/event/${eventNumber}
+ * @param entryId Entry id
+ * @param eventNumber The event / gameweek number
+ * @returns {Promise}
+ */
+export function fetchEntryEvent(entryId: number, eventNumber: number): Promise<EntryEvent> {
+  return fetchData(`/entry/${entryId}/event/${eventNumber}`);
+}
 
-  /**
-   * Entry event:
-   * Details of a particular event (or gameweek):
-   * A promise that if fulfilled returns an object
-   * mapped to https://fantasy.premierleague.com/drf/entry/${id}/event/${eventNumber}
-   * @param entryId Entry id
-   * @param eventNumber The event / gameweek number
-   * @returns {Promise}
-   */
-  public static getEntryEvent(entryId: number, eventNumber: number): Promise<IApiEntryEvent> {
-    return this.fetchData(`/entry/${entryId}/event/${eventNumber}`);
-  }
+/**
+ * Entry transfers:
+ * A promise that if fulfilled returns an object
+ * mapped to https://fantasy.premierleague.com/drf/entry/${id}/transfers
+ * @param entryId Entry id
+ * @returns {Promise}
+ */
+export function fetchEntryTransfers(entryId: number): Promise<EntryTransfers> {
+  return fetchData(`/entry/${entryId}/transfers`);
+}
 
-  /**
-   * Entry transfers:
-   * A promise that if fulfilled returns an object
-   * mapped to https://fantasy.premierleague.com/drf/entry/${id}/transfers
-   * @param entryId Entry id
-   * @returns {Promise}
-   */
-  public static getEntryTransfers(entryId: number): Promise<IApiEntryTransfers> {
-    return this.fetchData(`/entry/${entryId}/transfers`);
-  }
+/**
+ * All static game data:
+ * A promise that if fulfilled returns an object
+ * mapped to https://fantasy.premierleague.com/drf/bootstrap-static
+ * @returns {Promise}
+ */
+export function fetchBootstrapStatic(): Promise<BootstrapStatic> {
+  return fetchData('/bootstrap-static');
+}
 
-  /**
-   * All static game data:
-   * A promise that if fulfilled returns an object
-   * mapped to https://fantasy.premierleague.com/drf/bootstrap-static
-   * @returns {Promise}
-   */
-  public static getAllStaticData(): Promise<IApiAllStaticData> {
-    return this.fetchData('/bootstrap-static');
-  }
+/**
+ * Teams (Premier Leaugue clubs):
+ * A promise that if fulfilled returns an object
+ * mapped to https://fantasy.premierleague.com/drf/teams
+ * @returns {Promise}
+ */
+export function fetchTeams(): Promise<Team[]> {
+  return fetchData('/teams');
+}
 
-  /**
-   * Teams (Premier Leaugue clubs):
-   * A promise that if fulfilled returns an object
-   * mapped to https://fantasy.premierleague.com/drf/teams
-   * @returns {Promise}
-   */
-  public static getTeams(): Promise<IApiTeam[]> {
-    return this.fetchData('/teams');
-  }
+/**
+ * Elements (players):
+ * A promise that if fulfilled returns an object
+ * mapped to https://fantasy.premierleague.com/drf/elements
+ * @returns {Promise}
+ */
+export function fetchElements(): Promise<Element[]> {
+  return fetchData('/elements');
+}
 
-  /**
-   * Elements (players):
-   * A promise that if fulfilled returns an object
-   * mapped to https://fantasy.premierleague.com/drf/elements
-   * @returns {Promise}
-   */
-  public static getElements(): Promise<IApiElement[]> {
-    return this.fetchData('/elements');
-  }
+/**
+ * Element types: A promise that if fulfilled returns an object
+ * mapped to https://fantasy.premierleague.com/drf/elements-types
+ * @returns {Promise}
+ */
+export function fetchElementTypes(): Promise<ElementType[]> {
+  return fetchData('/element-types');
+}
 
-  /**
-   * Element types: A promise that if fulfilled returns an object
-   * mapped to https://fantasy.premierleague.com/drf/elements-types
-   * @returns {Promise}
-   */
-  public static getElementTypes(): Promise<IApiElementType[]> {
-    return this.fetchData('/element-types');
-  }
+/**
+ * Game settings:
+ * A promise that if fulfilled returns an object
+ * mapped to https://fantasy.premierleague.com/drf/game-settings
+ * @returns {Promise}
+ */
+export function fetchGameSettings(): Promise<GameSettings> {
+  return fetchData('game-settings');
+}
 
-  /**
-   * Game settings:
-   * A promise that if fulfilled returns an object
-   * mapped to https://fantasy.premierleague.com/drf/game-settings
-   * @returns {Promise}
-   */
-  public static getGameSettings(): Promise<IApiGameSettings> {
-    return this.fetchData('game-settings');
-  }
+/**
+ * Event /gameweek details:
+ * A promise that if fulfilled returns an object
+ * mapped to https://fantasy.premierleague.com/drf/event/${eventNumber}/live
+ * @returns {Promise}
+ */
+export function fetchEvent(eventNumber: number): Promise<Event> {
+  return fetchData(`/event/${eventNumber}/live`);
+}
 
-  /**
-   * Event /gameweek details:
-   * A promise that if fulfilled returns an object
-   * mapped to https://fantasy.premierleague.com/drf/event/${eventNumber}/live
-   * @returns {Promise}
-   */
-  public static getEvent(eventNumber: number): Promise<IApiEvent> {
-    return this.fetchData(`/event/${eventNumber}/live`);
-  }
+/**
+ * Classic league standings:
+ * A promise that if fulfilled returns an object
+ * mapped to https://fantasy.premierleague.com/drf/leagues-classic-standings/${id}
+ * @param leagueId League id
+ * @returns {Promise}
+ */
+export function fetchClassicLeagueStandings(leagueId: number): Promise<League> {
+  return fetchData(`/leagues-classic-standings/${leagueId}`);
+}
 
-  /**
-   * Classic league standings:
-   * A promise that if fulfilled returns an object
-   * mapped to https://fantasy.premierleague.com/drf/leagues-classic-standings/${id}
-   * @param leagueId League id
-   * @returns {Promise}
-   */
-  public static getClassicLeagueStandings(leagueId: number): Promise<IApiLeague> {
-    return this.fetchData(`/leagues-classic-standings/${leagueId}`);
-  }
+/**
+ * Returns a promise that if fulfilled returns json object mapped to the given request
+ * @param path The path of the rest web api request
+ * @returns {Promise}
+ * @private
+ */
+function fetchData(path: string) {
 
-  /**
-   * Returns a promise that if fulfilled returns json object mapped to the given request
-   * @param path The path of the rest web api request
-   * @returns {Promise}
-   * @private
-   */
-  private static fetchData(path: string) {
+  return new Promise((resolve: any, reject: any) => {
 
-    return new Promise((resolve: any, reject: any) => {
-
-      fetch(`https://fantasy.premierleague.com/drf/${path}`).then((res) => {
-        return res.json();
-      }).then((json) => {
-        resolve(json);
-      }).catch((err) => {
-        reject(err);
-      });
-
+    fetch(`https://fantasy.premierleague.com/drf/${path}`).then((res) => {
+      return res.json();
+    }).then((json) => {
+      resolve(json);
+    }).catch((err) => {
+      reject(err);
     });
 
-  }
+  });
 
 }
 
 /**
- * Export interfaces
+ * Interfaces
  */
 
 // all static data
-export interface IApiAllStaticData {
-  phases: IApiGamePhase[];
-  elements: IApiElement[];
-  'game-settings': IApiGame;
+export interface BootstrapStatic {
+  phases: GamePhase[];
+  elements: Element[];
+  'game-settings': Game;
   'total-players': number;
-  teams: IApiTeam[];
-  element_types: IApiElementType[];
-  events: IApiGameEvent[];
+  teams: Team[];
+  element_types: ElementType[];
+  events: GameEvent[];
 }
 
 // game interfaces
 
-export interface IApiGameSettings {
-  game: IApiGame;
-  element_type: IApiGameElement;
+export interface GameSettings {
+  game: Game;
+  element_type: GameElement;
 }
 
-export interface IApiGameEvent {
+export interface GameEvent {
   id: number;
   name: string;
   deadline_time: Date;
@@ -172,7 +182,7 @@ export interface IApiGameEvent {
   is_next: boolean;
 }
 
-export interface IApiGame {
+export interface Game {
   scoring_ea_index: number;
   league_prefix_public: string;
   bps_tackles: number;
@@ -245,7 +255,7 @@ export interface IApiGame {
   bps_red_cards: number;
   bps_winning_goals: number;
   league_join_public_max: number;
-  formations: IApiGameFormations;
+  formations: GameFormations;
   league_points_h2h_lose: number;
   currency_decimal_places: number;
   bps_errors_leading_to_goal_attempt: number;
@@ -267,7 +277,7 @@ export interface IApiGame {
   scoring_saves_limit: number;
 }
 
-export interface IApiGameElement {
+export interface GameElement {
   scoring_clean_sheets: number;
   squad_min_play: number;
   scoring_goals_conceded: number;
@@ -278,14 +288,14 @@ export interface IApiGameElement {
   squad_select: number;
 }
 
-export interface IApiGamePhase {
+export interface GamePhase {
   id: number;
   name: string;
   start_event: number;
   stop_event: number;
 }
 
-export interface IApiGameFormations {
+export interface GameFormations {
   '1-5-2-3': number[][];
   '1-5-3-2': number[][];
   '1-3-5-2': number[][];
@@ -298,7 +308,7 @@ export interface IApiGameFormations {
 }
 
 // element interfaces
-export interface IApiElement {
+export interface Element {
   id: number;
   photo: string;
   web_name: string;
@@ -358,7 +368,7 @@ export interface IApiElement {
   team: number;
 }
 
-export interface IApiElementType {
+export interface ElementType {
   id: number;
   singular_name: string;
   singular_name_short: string;
@@ -367,10 +377,10 @@ export interface IApiElementType {
 }
 
 // team interfaces
-export interface IApiTeam {
+export interface Team {
   id: number;
-  current_event_fixture: IApiTeamFixture[];
-  next_event_fixture: IApiTeamFixture[];
+  current_event_fixture: TeamFixture[];
+  next_event_fixture: TeamFixture[];
   name: string;
   code: number;
   short_name: string;
@@ -393,7 +403,7 @@ export interface IApiTeam {
   team_division: number;
 }
 
-export interface IApiTeamFixture {
+export interface TeamFixture {
   is_home: boolean;
   month: number;
   event_day: number;
@@ -403,14 +413,14 @@ export interface IApiTeamFixture {
 }
 
 // league interfaces
-export interface IApiLeague {
-  new_entries: IApiLeagueStandings;
-  league: IApiLeagueDetails;
-  standings: IApiLeagueStandings;
+export interface League {
+  new_entries: LeagueStandings;
+  league: LeagueDetails;
+  standings: LeagueStandings;
   update_status: number;
 }
 
-export interface IApiLeagueDetails {
+export interface LeagueDetails {
   id: number;
   leagueban_set: any[];
   name: string;
@@ -428,7 +438,7 @@ export interface IApiLeagueDetails {
   start_event: number;
 }
 
-export interface IApiLeagueStandings {
+export interface LeagueStandings {
   has_next: boolean;
   number: number;
   results: IApiLeaguePositions[];
@@ -453,31 +463,31 @@ export interface IApiLeaguePositions {
 
 // entry interfaces
 
-export interface IApiEntry {
-  chips: IApiEntryChip[];
-  entry: IApiEntryDetails;
-  leagues: IApiEntryLeagues;
-  season: IApiEntrySeason[];
-  history: IApiEntryHistory[];
+export interface Entry {
+  chips: EntryChip[];
+  entry: EntryDetails;
+  leagues: EntryLeagues;
+  season: EntrySeason[];
+  history: EntryHistory[];
 }
 
-export interface IApiEntryEvent {
-  leagues: IApiEntryLeagues;
-  entry_history: IApiEntryHistory;
+export interface EntryEvent {
+  leagues: EntryLeagues;
+  entry_history: EntryHistory;
   ce: number;
-  automatic_subs: IApiEntryAutomaticSub[];
-  fixtures: IApiFixture[];
+  automatic_subs: EntryAutomaticSub[];
+  fixtures: Fixture[];
   can_change_captain: boolean;
   manager_subs: any[];
-  picks: IApiEntryPick[];
+  picks: EntryPick[];
   own_entry: boolean;
-  state: IApiEntryState;
+  state: EntryState;
   points: number;
-  entry: IApiEntryDetails;
+  entry: EntryDetails;
   active_chip: string;
 }
 
-export interface IApiEntryState {
+export interface EntryState {
   event: number;
   sub_state: string;
   event_day: number;
@@ -485,7 +495,7 @@ export interface IApiEntryState {
   deadline_time_formatted: string;
 }
 
-export interface IApiEntryPick {
+export interface EntryPick {
   element: number;
   position: number;
   is_captain: boolean;
@@ -497,11 +507,11 @@ export interface IApiEntryPick {
   explain: any[][];
   is_sub: boolean;
   element_type: number;
-  stats: IApiStats;
+  stats: Stats;
   multiplier: number;
 }
 
-export interface IApiEntryAutomaticSub {
+export interface EntryAutomaticSub {
   id: number;
   element_in: number;
   element_out: number;
@@ -509,7 +519,7 @@ export interface IApiEntryAutomaticSub {
   event: number;
 }
 
-export interface IApiEntryDetails {
+export interface EntryDetails {
   id: number;
   player_first_name: string;
   player_last_name: string;
@@ -542,7 +552,7 @@ export interface IApiEntryDetails {
   player: number;
 }
 
-export interface IApiEntryLeague {
+export interface EntryLeague {
   id: number;
   entry_rank: number;
   entry_last_rank: number;
@@ -568,13 +578,13 @@ export interface IApiEntryLeague {
   start_event: number;
 }
 
-export interface IApiEntryLeagues {
-  cup: IApiEntryLeague[];
-  h2h: IApiEntryLeague[];
-  classic: IApiEntryLeague[];
+export interface EntryLeagues {
+  cup: EntryLeague[];
+  h2h: EntryLeague[];
+  classic: EntryLeague[];
 }
 
-export interface IApiEntryChip {
+export interface EntryChip {
   played_time_formatted: string;
   status: string;
   name: string;
@@ -584,7 +594,7 @@ export interface IApiEntryChip {
   event: number;
 }
 
-export interface IApiEntrySeason {
+export interface EntrySeason {
   id: number;
   season_name: string;
   total_points: number;
@@ -593,7 +603,7 @@ export interface IApiEntrySeason {
   player: number;
 }
 
-export interface IApiEntryHistory {
+export interface EntryHistory {
   id: number;
   movement: string;
   points: number;
@@ -611,14 +621,14 @@ export interface IApiEntryHistory {
   event: number;
 }
 
-export interface IApiEntryTransfers {
-  wildcards: IApiEntryWildcard[];
-  entry: IApiEntry;
-  leagues: IApiEntryLeagues;
-  history: IApiEntryTransferHistory[];
+export interface EntryTransfers {
+  wildcards: EntryWildcard[];
+  entry: Entry;
+  leagues: EntryLeagues;
+  history: EntryTransferHistory[];
 }
 
-export interface IApiEntryWildcard {
+export interface EntryWildcard {
   played_time_formatted: string;
   status: string;
   name: string;
@@ -628,7 +638,7 @@ export interface IApiEntryWildcard {
   event: number;
 }
 
-export interface IApiEntryTransferHistory {
+export interface EntryTransferHistory {
   id: number;
   time_formatted: string;
   time: Date;
@@ -642,7 +652,7 @@ export interface IApiEntryTransferHistory {
 
 // stats
 
-export interface IApiStats {
+export interface Stats {
   yellow_cards: number;
   own_goals: number;
   creativity: number;
@@ -666,14 +676,14 @@ export interface IApiStats {
 
 // fixture
 
-export interface IApiFixture {
+export interface Fixture {
   id: number;
   kickoff_time_formatted: string;
   started: boolean;
   event_day: number;
   deadline_time: Date;
   deadline_time_formatted: string;
-  stats: IApiFixtureStats;
+  stats: FixtureStats;
   code: number;
   kickoff_time: Date;
   team_h_score: number;
@@ -687,44 +697,44 @@ export interface IApiFixture {
   team_h: number;
 }
 
-export interface IApiFixtureStats {
-  goals_scored: IApiFixtureStatHomeAndAway;
-  assists: IApiFixtureStatHomeAndAway;
-  own_goals: IApiFixtureStatHomeAndAway;
-  penalties_saved: IApiFixtureStatHomeAndAway;
-  penalties_missed: IApiFixtureStatHomeAndAway;
-  yellow_cards: IApiFixtureStatHomeAndAway;
-  red_cards: IApiFixtureStatHomeAndAway;
-  saves: IApiFixtureStatHomeAndAway;
-  bonus: IApiFixtureStatHomeAndAway;
-  bps: IApiFixtureStatHomeAndAway;
+export interface FixtureStats {
+  goals_scored: FixtureStatHomeAndAway;
+  assists: FixtureStatHomeAndAway;
+  own_goals: FixtureStatHomeAndAway;
+  penalties_saved: FixtureStatHomeAndAway;
+  penalties_missed: FixtureStatHomeAndAway;
+  yellow_cards: FixtureStatHomeAndAway;
+  red_cards: FixtureStatHomeAndAway;
+  saves: FixtureStatHomeAndAway;
+  bonus: FixtureStatHomeAndAway;
+  bps: FixtureStatHomeAndAway;
 }
 
-export interface IApiFixtureStatHomeAndAway {
-  a: IApiFixtureStatValue[];
-  h: IApiFixtureStatValue[];
+export interface FixtureStatHomeAndAway {
+  a: FixtureStatValue[];
+  h: FixtureStatValue[];
 }
 
-export interface IApiFixtureStatValue {
+export interface FixtureStatValue {
   value: number;
   element: number;
 }
 
 // event
 
-export interface IApiEvent {
-  fixtures: IApiFixture[];
-  elements: IApiEventElements;
+export interface Event {
+  fixtures: Fixture[];
+  elements: EventElements;
 }
 
-export interface IApiEventElements {
+export interface EventElements {
   [key: number]: {
-    explain: IApiEventElementsExplain[];
-    stats: IApiStats;
+    explain: EventElementsExplain[];
+    stats: Stats;
   };
 }
 
-export interface IApiEventElementsExplain {
+export interface EventElementsExplain {
   [key: string]: {
     points: number;
     name: string;
