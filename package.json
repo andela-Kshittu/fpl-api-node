@@ -8,9 +8,10 @@
     "dist/"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "docs": "typedoc --out docs --mode file --excludePrivate --readme none --hideGenerator",
-    "lint": "tslint --project tsconfig.json"
+    "lint": "tslint --project tsconfig.json",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublish": "rm -rf dist && tsc"
   },
   "repository": {
     "type": "git",
