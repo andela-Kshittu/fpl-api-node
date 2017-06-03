@@ -30,11 +30,11 @@ import * as fplapi from 'fpl-api-node';
 ```js
 fplapi.getEntry(123456).then((data) => {
 
-    // do something with our data
-    console.log(data);
+  // do something with our data
+  console.log(data);
 
 }).catch((err) => {
-    // something went wrong
+  // something went wrong
 });
 ```
 
