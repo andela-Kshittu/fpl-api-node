@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>IApiLeaguePositions | fpl-api-node</title>
+	<title>FixtureStats | fpl-api-node</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,10 +56,10 @@
 					<a href="../index.html">Globals</a>
 				</li>
 				<li>
-					<a href="iapileaguepositions.html">IApiLeaguePositions</a>
+					<a href="fixturestats.html">FixtureStats</a>
 				</li>
 			</ul>
-			<h1>Interface IApiLeaguePositions</h1>
+			<h1>Interface FixtureStats</h1>
 		</div>
 	</div>
 </header>
@@ -70,7 +70,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">IApiLeaguePositions</span>
+						<span class="target">FixtureStats</span>
 					</li>
 				</ul>
 			</section>
@@ -81,20 +81,16 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="iapileaguepositions.html#entry" class="tsd-kind-icon">entry</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="iapileaguepositions.html#entry_name" class="tsd-kind-icon">entry_<wbr>name</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="iapileaguepositions.html#event_total" class="tsd-kind-icon">event_<wbr>total</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="iapileaguepositions.html#id" class="tsd-kind-icon">id</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="iapileaguepositions.html#last_rank" class="tsd-kind-icon">last_<wbr>rank</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="iapileaguepositions.html#league" class="tsd-kind-icon">league</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="iapileaguepositions.html#movement" class="tsd-kind-icon">movement</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="iapileaguepositions.html#own_entry" class="tsd-kind-icon">own_<wbr>entry</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="iapileaguepositions.html#player_name" class="tsd-kind-icon">player_<wbr>name</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="iapileaguepositions.html#rank" class="tsd-kind-icon">rank</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="iapileaguepositions.html#rank_sort" class="tsd-kind-icon">rank_<wbr>sort</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="iapileaguepositions.html#start_event" class="tsd-kind-icon">start_<wbr>event</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="iapileaguepositions.html#stop_event" class="tsd-kind-icon">stop_<wbr>event</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="iapileaguepositions.html#total" class="tsd-kind-icon">total</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="fixturestats.html#assists" class="tsd-kind-icon">assists</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="fixturestats.html#bonus" class="tsd-kind-icon">bonus</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="fixturestats.html#bps" class="tsd-kind-icon">bps</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="fixturestats.html#goals_scored" class="tsd-kind-icon">goals_<wbr>scored</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="fixturestats.html#own_goals" class="tsd-kind-icon">own_<wbr>goals</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="fixturestats.html#penalties_missed" class="tsd-kind-icon">penalties_<wbr>missed</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="fixturestats.html#penalties_saved" class="tsd-kind-icon">penalties_<wbr>saved</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="fixturestats.html#red_cards" class="tsd-kind-icon">red_<wbr>cards</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="fixturestats.html#saves" class="tsd-kind-icon">saves</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="fixturestats.html#yellow_cards" class="tsd-kind-icon">yellow_<wbr>cards</a></li>
 							</ul>
 						</section>
 					</div>
@@ -103,142 +99,102 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="entry" class="tsd-anchor"></a>
-					<h3>entry</h3>
-					<div class="tsd-signature tsd-kind-icon">entry<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="assists" class="tsd-anchor"></a>
+					<h3>assists</h3>
+					<div class="tsd-signature tsd-kind-icon">assists<span class="tsd-signature-symbol">:</span> <a href="fixturestathomeandaway.html" class="tsd-signature-type">FixtureStatHomeAndAway</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/tgreyuk/fpl-api-node/blob/bf5900f/src/index.ts#L458">index.ts:458</a></li>
+							<li>Defined in <a href="https://github.com/tgreyuk/fpl-api-node/blob/bf5900f/src/index.ts#L702">index.ts:702</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="entry_name" class="tsd-anchor"></a>
-					<h3>entry_<wbr>name</h3>
-					<div class="tsd-signature tsd-kind-icon">entry_<wbr>name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="bonus" class="tsd-anchor"></a>
+					<h3>bonus</h3>
+					<div class="tsd-signature tsd-kind-icon">bonus<span class="tsd-signature-symbol">:</span> <a href="fixturestathomeandaway.html" class="tsd-signature-type">FixtureStatHomeAndAway</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/tgreyuk/fpl-api-node/blob/bf5900f/src/index.ts#L449">index.ts:449</a></li>
+							<li>Defined in <a href="https://github.com/tgreyuk/fpl-api-node/blob/bf5900f/src/index.ts#L709">index.ts:709</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="event_total" class="tsd-anchor"></a>
-					<h3>event_<wbr>total</h3>
-					<div class="tsd-signature tsd-kind-icon">event_<wbr>total<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="bps" class="tsd-anchor"></a>
+					<h3>bps</h3>
+					<div class="tsd-signature tsd-kind-icon">bps<span class="tsd-signature-symbol">:</span> <a href="fixturestathomeandaway.html" class="tsd-signature-type">FixtureStatHomeAndAway</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/tgreyuk/fpl-api-node/blob/bf5900f/src/index.ts#L450">index.ts:450</a></li>
+							<li>Defined in <a href="https://github.com/tgreyuk/fpl-api-node/blob/bf5900f/src/index.ts#L710">index.ts:710</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="id" class="tsd-anchor"></a>
-					<h3>id</h3>
-					<div class="tsd-signature tsd-kind-icon">id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="goals_scored" class="tsd-anchor"></a>
+					<h3>goals_<wbr>scored</h3>
+					<div class="tsd-signature tsd-kind-icon">goals_<wbr>scored<span class="tsd-signature-symbol">:</span> <a href="fixturestathomeandaway.html" class="tsd-signature-type">FixtureStatHomeAndAway</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/tgreyuk/fpl-api-node/blob/bf5900f/src/index.ts#L448">index.ts:448</a></li>
+							<li>Defined in <a href="https://github.com/tgreyuk/fpl-api-node/blob/bf5900f/src/index.ts#L701">index.ts:701</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="last_rank" class="tsd-anchor"></a>
-					<h3>last_<wbr>rank</h3>
-					<div class="tsd-signature tsd-kind-icon">last_<wbr>rank<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="own_goals" class="tsd-anchor"></a>
+					<h3>own_<wbr>goals</h3>
+					<div class="tsd-signature tsd-kind-icon">own_<wbr>goals<span class="tsd-signature-symbol">:</span> <a href="fixturestathomeandaway.html" class="tsd-signature-type">FixtureStatHomeAndAway</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/tgreyuk/fpl-api-node/blob/bf5900f/src/index.ts#L455">index.ts:455</a></li>
+							<li>Defined in <a href="https://github.com/tgreyuk/fpl-api-node/blob/bf5900f/src/index.ts#L703">index.ts:703</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="league" class="tsd-anchor"></a>
-					<h3>league</h3>
-					<div class="tsd-signature tsd-kind-icon">league<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="penalties_missed" class="tsd-anchor"></a>
+					<h3>penalties_<wbr>missed</h3>
+					<div class="tsd-signature tsd-kind-icon">penalties_<wbr>missed<span class="tsd-signature-symbol">:</span> <a href="fixturestathomeandaway.html" class="tsd-signature-type">FixtureStatHomeAndAway</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/tgreyuk/fpl-api-node/blob/bf5900f/src/index.ts#L459">index.ts:459</a></li>
+							<li>Defined in <a href="https://github.com/tgreyuk/fpl-api-node/blob/bf5900f/src/index.ts#L705">index.ts:705</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="movement" class="tsd-anchor"></a>
-					<h3>movement</h3>
-					<div class="tsd-signature tsd-kind-icon">movement<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="penalties_saved" class="tsd-anchor"></a>
+					<h3>penalties_<wbr>saved</h3>
+					<div class="tsd-signature tsd-kind-icon">penalties_<wbr>saved<span class="tsd-signature-symbol">:</span> <a href="fixturestathomeandaway.html" class="tsd-signature-type">FixtureStatHomeAndAway</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/tgreyuk/fpl-api-node/blob/bf5900f/src/index.ts#L452">index.ts:452</a></li>
+							<li>Defined in <a href="https://github.com/tgreyuk/fpl-api-node/blob/bf5900f/src/index.ts#L704">index.ts:704</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="own_entry" class="tsd-anchor"></a>
-					<h3>own_<wbr>entry</h3>
-					<div class="tsd-signature tsd-kind-icon">own_<wbr>entry<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<a name="red_cards" class="tsd-anchor"></a>
+					<h3>red_<wbr>cards</h3>
+					<div class="tsd-signature tsd-kind-icon">red_<wbr>cards<span class="tsd-signature-symbol">:</span> <a href="fixturestathomeandaway.html" class="tsd-signature-type">FixtureStatHomeAndAway</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/tgreyuk/fpl-api-node/blob/bf5900f/src/index.ts#L453">index.ts:453</a></li>
+							<li>Defined in <a href="https://github.com/tgreyuk/fpl-api-node/blob/bf5900f/src/index.ts#L707">index.ts:707</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="player_name" class="tsd-anchor"></a>
-					<h3>player_<wbr>name</h3>
-					<div class="tsd-signature tsd-kind-icon">player_<wbr>name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="saves" class="tsd-anchor"></a>
+					<h3>saves</h3>
+					<div class="tsd-signature tsd-kind-icon">saves<span class="tsd-signature-symbol">:</span> <a href="fixturestathomeandaway.html" class="tsd-signature-type">FixtureStatHomeAndAway</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/tgreyuk/fpl-api-node/blob/bf5900f/src/index.ts#L451">index.ts:451</a></li>
+							<li>Defined in <a href="https://github.com/tgreyuk/fpl-api-node/blob/bf5900f/src/index.ts#L708">index.ts:708</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="rank" class="tsd-anchor"></a>
-					<h3>rank</h3>
-					<div class="tsd-signature tsd-kind-icon">rank<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="yellow_cards" class="tsd-anchor"></a>
+					<h3>yellow_<wbr>cards</h3>
+					<div class="tsd-signature tsd-kind-icon">yellow_<wbr>cards<span class="tsd-signature-symbol">:</span> <a href="fixturestathomeandaway.html" class="tsd-signature-type">FixtureStatHomeAndAway</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/tgreyuk/fpl-api-node/blob/bf5900f/src/index.ts#L454">index.ts:454</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="rank_sort" class="tsd-anchor"></a>
-					<h3>rank_<wbr>sort</h3>
-					<div class="tsd-signature tsd-kind-icon">rank_<wbr>sort<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/tgreyuk/fpl-api-node/blob/bf5900f/src/index.ts#L456">index.ts:456</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="start_event" class="tsd-anchor"></a>
-					<h3>start_<wbr>event</h3>
-					<div class="tsd-signature tsd-kind-icon">start_<wbr>event<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/tgreyuk/fpl-api-node/blob/bf5900f/src/index.ts#L460">index.ts:460</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="stop_event" class="tsd-anchor"></a>
-					<h3>stop_<wbr>event</h3>
-					<div class="tsd-signature tsd-kind-icon">stop_<wbr>event<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/tgreyuk/fpl-api-node/blob/bf5900f/src/index.ts#L461">index.ts:461</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="total" class="tsd-anchor"></a>
-					<h3>total</h3>
-					<div class="tsd-signature tsd-kind-icon">total<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/tgreyuk/fpl-api-node/blob/bf5900f/src/index.ts#L457">index.ts:457</a></li>
+							<li>Defined in <a href="https://github.com/tgreyuk/fpl-api-node/blob/bf5900f/src/index.ts#L706">index.ts:706</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -257,49 +213,37 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface">
-						<a href="iapileaguepositions.html" class="tsd-kind-icon">IApi<wbr>League<wbr>Positions</a>
+						<a href="fixturestats.html" class="tsd-kind-icon">Fixture<wbr>Stats</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="iapileaguepositions.html#entry" class="tsd-kind-icon">entry</a>
+								<a href="fixturestats.html#assists" class="tsd-kind-icon">assists</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="iapileaguepositions.html#entry_name" class="tsd-kind-icon">entry_<wbr>name</a>
+								<a href="fixturestats.html#bonus" class="tsd-kind-icon">bonus</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="iapileaguepositions.html#event_total" class="tsd-kind-icon">event_<wbr>total</a>
+								<a href="fixturestats.html#bps" class="tsd-kind-icon">bps</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="iapileaguepositions.html#id" class="tsd-kind-icon">id</a>
+								<a href="fixturestats.html#goals_scored" class="tsd-kind-icon">goals_<wbr>scored</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="iapileaguepositions.html#last_rank" class="tsd-kind-icon">last_<wbr>rank</a>
+								<a href="fixturestats.html#own_goals" class="tsd-kind-icon">own_<wbr>goals</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="iapileaguepositions.html#league" class="tsd-kind-icon">league</a>
+								<a href="fixturestats.html#penalties_missed" class="tsd-kind-icon">penalties_<wbr>missed</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="iapileaguepositions.html#movement" class="tsd-kind-icon">movement</a>
+								<a href="fixturestats.html#penalties_saved" class="tsd-kind-icon">penalties_<wbr>saved</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="iapileaguepositions.html#own_entry" class="tsd-kind-icon">own_<wbr>entry</a>
+								<a href="fixturestats.html#red_cards" class="tsd-kind-icon">red_<wbr>cards</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="iapileaguepositions.html#player_name" class="tsd-kind-icon">player_<wbr>name</a>
+								<a href="fixturestats.html#saves" class="tsd-kind-icon">saves</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="iapileaguepositions.html#rank" class="tsd-kind-icon">rank</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="iapileaguepositions.html#rank_sort" class="tsd-kind-icon">rank_<wbr>sort</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="iapileaguepositions.html#start_event" class="tsd-kind-icon">start_<wbr>event</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="iapileaguepositions.html#stop_event" class="tsd-kind-icon">stop_<wbr>event</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="iapileaguepositions.html#total" class="tsd-kind-icon">total</a>
+								<a href="fixturestats.html#yellow_cards" class="tsd-kind-icon">yellow_<wbr>cards</a>
 							</li>
 						</ul>
 					</li>
