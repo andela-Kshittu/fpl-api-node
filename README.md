@@ -22,7 +22,7 @@ const fplapi = require('fpl-api-node');
 ### Typescript / ES2105
 
 ```js
-import * as fplapi from 'fpl-api-node');
+import * as fplapi from 'fpl-api-node';
 ```
 
 ### Example
