@@ -28,12 +28,12 @@
   },
   "homepage": "https://github.com/tgreyuk/fpl-api-node#readme",
   "dependencies": {
-    "node-fetch": "^1.6.3"
+    "@types/node-fetch": "1.6.7",
+    "node-fetch": "1.7.1"
   },
   "devDependencies": {
-    "@types/node-fetch": "^1.6.7",
-    "tslint": "^5.1.0",
-    "typedoc": "^0.5.10",
-    "typescript": "^2.2.2"
+    "tslint": "5.4.2",
+    "typedoc": "0.7.1",
+    "typescript": "2.3.4"
   }
 }
