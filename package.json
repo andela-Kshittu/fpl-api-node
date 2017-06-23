@@ -8,7 +8,7 @@
     "dist/"
   ],
   "scripts": {
-    "docs": "typedoc --out docs --mode file --excludePrivate --readme none --hideGenerator",
+    "docs": "typedoc --out docs --name API --mode file --excludePrivate --theme markdown --markdownOutFile README.md --markdownSuppressIndexes",
     "lint": "tslint --project tsconfig.json",
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepublish": "rm -rf dist && tsc"
@@ -35,6 +35,7 @@
   "devDependencies": {
     "tslint": "5.4.2",
     "typedoc": "0.7.1",
+    "typedoc-plugin-markdown": "0.0.17",
     "typescript": "2.3.4"
   }
 }

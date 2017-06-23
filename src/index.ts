@@ -143,10 +143,6 @@ function fetchData(path: string) {
 
 }
 
-/**
- * Interfaces
- */
-
 // all static data
 export interface BootstrapStatic {
   phases: GamePhase[];
