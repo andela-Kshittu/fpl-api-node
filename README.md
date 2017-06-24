@@ -1,32 +1,27 @@
 
+
 # fpl-api-node
 
 [![npm](https://img.shields.io/npm/v/fpl-api-node.svg)](https://www.npmjs.com/package/fpl-api-node)
 [![npm](https://img.shields.io/apm/l/vim-mode.svg)]()
 
-A simple node wrapper for the Fantasy Premier League (fantasy.premierleague.com) restful web api.
+A node wrapper for the Fantasy Premier League (fantasy.premierleague.com) restful web api. 
+It's job is a simple one - to fetch and return data that maps to the available end-points.
 
-## Installation
+## Getting started
+
 ```js
 npm install fpl-api-node --save
 ```
 
-## Usage
-The package is written in typescript and can be consumed either strongly-typed or in plain Javascript.
-
-### Javascript
 
 ```js
 const fplapi = require('fpl-api-node');
-```
 
-### Typescript / ES2105
+or
 
-```js
 import * as fplapi from 'fpl-api-node';
 ```
-
-### Example
 
 ```js
 fplapi.getEntry(123456).then((data) => {
@@ -39,13 +34,20 @@ fplapi.getEntry(123456).then((data) => {
 });
 ```
 
-<span id="typedoc-plugin-markdown"></span>
+## Use cases
+
+You can use the package in a number of ways. To leverage as a restful api on a web app using expressjs check out 
+https://github.com/tgreyuk/fpl-angular-cli-express-seed. 
+
+A cache strategy is advisable on whatever platform the package is used with.  
+
+<span id="api"></span>
 
 #  API
 
 
 # Functions
-<a id="fetchbootstrapstatic"></a>
+<a id="typedoc-plugin-markdown"></a>
 
 ###  fetchBootstrapStatic
 
@@ -1323,6 +1325,4 @@ value: number
 | month | number
 | opponent | number
 ↩&nbsp;&nbsp;[Back to top](#typedoc-plugin-markdown)
-
-
 
