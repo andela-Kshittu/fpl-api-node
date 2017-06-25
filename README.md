@@ -41,13 +41,11 @@ https://github.com/tgreyuk/fpl-angular-cli-express-seed.
 
 A cache strategy is advisable on whatever platform the package is used with.  
 
-<span id="api"></span>
-
 #  API
 
 
 # Functions
-<a id="typedoc-plugin-markdown"></a>
+<a id="fetchbootstrapstatic"></a>
 
 ###  fetchBootstrapStatic
 
@@ -55,7 +53,7 @@ A cache strategy is advisable on whatever platform the package is used with.
 
 
 
-*Defined in [index.ts:60](https://github.com/tgreyuk/fpl-api-node/blob/6def444/src/index.ts#L60)*
+*Defined in [index.ts:60](https://github.com/tgreyuk/fpl-api-node/blob/a8a2799/src/index.ts#L60)*
 
 All static game data:
 A promise that if fulfilled returns an object
@@ -82,7 +80,7 @@ ___
 
 
 
-*Defined in [index.ts:120](https://github.com/tgreyuk/fpl-api-node/blob/6def444/src/index.ts#L120)*
+*Defined in [index.ts:120](https://github.com/tgreyuk/fpl-api-node/blob/a8a2799/src/index.ts#L120)*
 
 Classic league standings:
 A promise that if fulfilled returns an object
@@ -118,7 +116,7 @@ ___
 
 
 
-*Defined in [index.ts:89](https://github.com/tgreyuk/fpl-api-node/blob/6def444/src/index.ts#L89)*
+*Defined in [index.ts:89](https://github.com/tgreyuk/fpl-api-node/blob/a8a2799/src/index.ts#L89)*
 
 Element types: A promise that if fulfilled returns an object
 mapped to https://fantasy.premierleague.com/drf/elements-types
@@ -144,7 +142,7 @@ ___
 
 
 
-*Defined in [index.ts:80](https://github.com/tgreyuk/fpl-api-node/blob/6def444/src/index.ts#L80)*
+*Defined in [index.ts:80](https://github.com/tgreyuk/fpl-api-node/blob/a8a2799/src/index.ts#L80)*
 
 Elements (players):
 A promise that if fulfilled returns an object
@@ -171,7 +169,7 @@ ___
 
 
 
-*Defined in [index.ts:26](https://github.com/tgreyuk/fpl-api-node/blob/6def444/src/index.ts#L26)*
+*Defined in [index.ts:26](https://github.com/tgreyuk/fpl-api-node/blob/a8a2799/src/index.ts#L26)*
 
 Entry (Fpl manager team):
 A promise that if fulfilled returns an object
@@ -206,7 +204,7 @@ ___
 
 
 
-*Defined in [index.ts:39](https://github.com/tgreyuk/fpl-api-node/blob/6def444/src/index.ts#L39)*
+*Defined in [index.ts:39](https://github.com/tgreyuk/fpl-api-node/blob/a8a2799/src/index.ts#L39)*
 
 Entry event:
 Details of a particular event (or gameweek):
@@ -243,7 +241,7 @@ ___
 
 
 
-*Defined in [index.ts:50](https://github.com/tgreyuk/fpl-api-node/blob/6def444/src/index.ts#L50)*
+*Defined in [index.ts:50](https://github.com/tgreyuk/fpl-api-node/blob/a8a2799/src/index.ts#L50)*
 
 Entry transfers:
 A promise that if fulfilled returns an object
@@ -278,7 +276,7 @@ ___
 
 
 
-*Defined in [index.ts:109](https://github.com/tgreyuk/fpl-api-node/blob/6def444/src/index.ts#L109)*
+*Defined in [index.ts:109](https://github.com/tgreyuk/fpl-api-node/blob/a8a2799/src/index.ts#L109)*
 
 Event /gameweek details:
 A promise that if fulfilled returns an object
@@ -313,7 +311,7 @@ ___
 
 
 
-*Defined in [index.ts:99](https://github.com/tgreyuk/fpl-api-node/blob/6def444/src/index.ts#L99)*
+*Defined in [index.ts:99](https://github.com/tgreyuk/fpl-api-node/blob/a8a2799/src/index.ts#L99)*
 
 Game settings:
 A promise that if fulfilled returns an object
@@ -340,7 +338,7 @@ ___
 
 
 
-*Defined in [index.ts:70](https://github.com/tgreyuk/fpl-api-node/blob/6def444/src/index.ts#L70)*
+*Defined in [index.ts:70](https://github.com/tgreyuk/fpl-api-node/blob/a8a2799/src/index.ts#L70)*
 
 Teams (Premier Leaugue clubs):
 A promise that if fulfilled returns an object
@@ -359,7 +357,7 @@ mapped to https://fantasy.premierleague.com/drf/teams
 
 ___
 
-↩&nbsp;&nbsp;[Back to top](#typedoc-plugin-markdown)
+↩&nbsp;&nbsp;[Back to top](#api)
 
 ---
 
@@ -380,7 +378,16 @@ ___
 | phases | [GamePhase](#interface-gamephase)[]
 | teams | [Team](#interface-team)[]
 | total-players | number
-↩&nbsp;&nbsp;[Back to top](#typedoc-plugin-markdown)
+
+----
+
+
+↩&nbsp;&nbsp;[Back to top](#api)
+
+----
+
+
+
 
 
 
@@ -450,7 +457,16 @@ ___
 | value_season | string
 | web_name | string
 | yellow_cards | number
-↩&nbsp;&nbsp;[Back to top](#typedoc-plugin-markdown)
+
+----
+
+
+↩&nbsp;&nbsp;[Back to top](#api)
+
+----
+
+
+
 
 
 
@@ -468,7 +484,16 @@ ___
 | plural_name_short | string
 | singular_name | string
 | singular_name_short | string
-↩&nbsp;&nbsp;[Back to top](#typedoc-plugin-markdown)
+
+----
+
+
+↩&nbsp;&nbsp;[Back to top](#api)
+
+----
+
+
+
 
 
 
@@ -486,7 +511,16 @@ ___
 | history | [EntryHistory](#interface-entryhistory)[]
 | leagues | [EntryLeagues](#interface-entryleagues)
 | season | [EntrySeason](#interface-entryseason)[]
-↩&nbsp;&nbsp;[Back to top](#typedoc-plugin-markdown)
+
+----
+
+
+↩&nbsp;&nbsp;[Back to top](#api)
+
+----
+
+
+
 
 
 
@@ -504,7 +538,16 @@ ___
 | entry | number
 | event | number
 | id | number
-↩&nbsp;&nbsp;[Back to top](#typedoc-plugin-markdown)
+
+----
+
+
+↩&nbsp;&nbsp;[Back to top](#api)
+
+----
+
+
+
 
 
 
@@ -524,7 +567,16 @@ ___
 | played_time_formatted | string
 | status | string
 | time | Date
-↩&nbsp;&nbsp;[Back to top](#typedoc-plugin-markdown)
+
+----
+
+
+↩&nbsp;&nbsp;[Back to top](#api)
+
+----
+
+
+
 
 
 
@@ -567,7 +619,16 @@ ___
 | total_transfers | number
 | transfers_or_loans | string
 | value | number
-↩&nbsp;&nbsp;[Back to top](#typedoc-plugin-markdown)
+
+----
+
+
+↩&nbsp;&nbsp;[Back to top](#api)
+
+----
+
+
+
 
 
 
@@ -593,7 +654,16 @@ ___
 | picks | [EntryPick](#interface-entrypick)[]
 | points | number
 | state | [EntryState](#interface-entrystate)
-↩&nbsp;&nbsp;[Back to top](#typedoc-plugin-markdown)
+
+----
+
+
+↩&nbsp;&nbsp;[Back to top](#api)
+
+----
+
+
+
 
 
 
@@ -621,7 +691,16 @@ ___
 | targets | any
 | total_points | number
 | value | number
-↩&nbsp;&nbsp;[Back to top](#typedoc-plugin-markdown)
+
+----
+
+
+↩&nbsp;&nbsp;[Back to top](#api)
+
+----
+
+
+
 
 
 
@@ -657,7 +736,16 @@ ___
 | short_name | string
 | size | any
 | start_event | number
-↩&nbsp;&nbsp;[Back to top](#typedoc-plugin-markdown)
+
+----
+
+
+↩&nbsp;&nbsp;[Back to top](#api)
+
+----
+
+
+
 
 
 
@@ -673,7 +761,16 @@ ___
 | classic | [EntryLeague](#interface-entryleague)[]
 | cup | [EntryLeague](#interface-entryleague)[]
 | h2h | [EntryLeague](#interface-entryleague)[]
-↩&nbsp;&nbsp;[Back to top](#typedoc-plugin-markdown)
+
+----
+
+
+↩&nbsp;&nbsp;[Back to top](#api)
+
+----
+
+
+
 
 
 
@@ -699,7 +796,16 @@ ___
 | points | number
 | position | number
 | stats | [Stats](#interface-stats)
-↩&nbsp;&nbsp;[Back to top](#typedoc-plugin-markdown)
+
+----
+
+
+↩&nbsp;&nbsp;[Back to top](#api)
+
+----
+
+
+
 
 
 
@@ -718,7 +824,16 @@ ___
 | season | number
 | season_name | string
 | total_points | number
-↩&nbsp;&nbsp;[Back to top](#typedoc-plugin-markdown)
+
+----
+
+
+↩&nbsp;&nbsp;[Back to top](#api)
+
+----
+
+
+
 
 
 
@@ -736,7 +851,16 @@ ___
 | event | number
 | event_day | number
 | sub_state | string
-↩&nbsp;&nbsp;[Back to top](#typedoc-plugin-markdown)
+
+----
+
+
+↩&nbsp;&nbsp;[Back to top](#api)
+
+----
+
+
+
 
 
 
@@ -758,7 +882,16 @@ ___
 | id | number
 | time | Date
 | time_formatted | string
-↩&nbsp;&nbsp;[Back to top](#typedoc-plugin-markdown)
+
+----
+
+
+↩&nbsp;&nbsp;[Back to top](#api)
+
+----
+
+
+
 
 
 
@@ -775,7 +908,16 @@ ___
 | history | [EntryTransferHistory](#interface-entrytransferhistory)[]
 | leagues | [EntryLeagues](#interface-entryleagues)
 | wildcards | [EntryWildcard](#interface-entrywildcard)[]
-↩&nbsp;&nbsp;[Back to top](#typedoc-plugin-markdown)
+
+----
+
+
+↩&nbsp;&nbsp;[Back to top](#api)
+
+----
+
+
+
 
 
 
@@ -795,7 +937,16 @@ ___
 | played_time_formatted | string
 | status | string
 | time | Date
-↩&nbsp;&nbsp;[Back to top](#typedoc-plugin-markdown)
+
+----
+
+
+↩&nbsp;&nbsp;[Back to top](#api)
+
+----
+
+
+
 
 
 
@@ -810,7 +961,16 @@ ___
 | ------ | ------------------- 
 | elements | [EventElements](#interface-eventelements)
 | fixtures | [Fixture](#interface-fixture)[]
-↩&nbsp;&nbsp;[Back to top](#typedoc-plugin-markdown)
+
+----
+
+
+↩&nbsp;&nbsp;[Back to top](#api)
+
+----
+
+
+
 
 
 
@@ -832,7 +992,16 @@ stats: [Stats](#interface-stats)
 
 
 
-↩&nbsp;&nbsp;[Back to top](#typedoc-plugin-markdown)
+
+----
+
+
+↩&nbsp;&nbsp;[Back to top](#api)
+
+----
+
+
+
 
 
 
@@ -858,7 +1027,16 @@ value: number
 
 
 
-↩&nbsp;&nbsp;[Back to top](#typedoc-plugin-markdown)
+
+----
+
+
+↩&nbsp;&nbsp;[Back to top](#api)
+
+----
+
+
+
 
 
 
@@ -889,7 +1067,16 @@ value: number
 | team_a_score | number
 | team_h | number
 | team_h_score | number
-↩&nbsp;&nbsp;[Back to top](#typedoc-plugin-markdown)
+
+----
+
+
+↩&nbsp;&nbsp;[Back to top](#api)
+
+----
+
+
+
 
 
 
@@ -904,7 +1091,16 @@ value: number
 | ------ | ------------------- 
 | a | [FixtureStatValue](#interface-fixturestatvalue)[]
 | h | [FixtureStatValue](#interface-fixturestatvalue)[]
-↩&nbsp;&nbsp;[Back to top](#typedoc-plugin-markdown)
+
+----
+
+
+↩&nbsp;&nbsp;[Back to top](#api)
+
+----
+
+
+
 
 
 
@@ -919,7 +1115,16 @@ value: number
 | ------ | ------------------- 
 | element | number
 | value | number
-↩&nbsp;&nbsp;[Back to top](#typedoc-plugin-markdown)
+
+----
+
+
+↩&nbsp;&nbsp;[Back to top](#api)
+
+----
+
+
+
 
 
 
@@ -942,7 +1147,16 @@ value: number
 | red_cards | [FixtureStatHomeAndAway](#interface-fixturestathomeandaway)
 | saves | [FixtureStatHomeAndAway](#interface-fixturestathomeandaway)
 | yellow_cards | [FixtureStatHomeAndAway](#interface-fixturestathomeandaway)
-↩&nbsp;&nbsp;[Back to top](#typedoc-plugin-markdown)
+
+----
+
+
+↩&nbsp;&nbsp;[Back to top](#api)
+
+----
+
+
+
 
 
 
@@ -1047,7 +1261,16 @@ value: number
 | ui_selection_price_gap | number
 | ui_selection_short_team_names | boolean
 | ui_show_home_away | boolean
-↩&nbsp;&nbsp;[Back to top](#typedoc-plugin-markdown)
+
+----
+
+
+↩&nbsp;&nbsp;[Back to top](#api)
+
+----
+
+
+
 
 
 
@@ -1068,7 +1291,16 @@ value: number
 | squad_max_play | number
 | squad_min_play | number
 | squad_select | number
-↩&nbsp;&nbsp;[Back to top](#typedoc-plugin-markdown)
+
+----
+
+
+↩&nbsp;&nbsp;[Back to top](#api)
+
+----
+
+
+
 
 
 
@@ -1095,7 +1327,16 @@ value: number
 | is_next | boolean
 | is_previous | boolean
 | name | string
-↩&nbsp;&nbsp;[Back to top](#typedoc-plugin-markdown)
+
+----
+
+
+↩&nbsp;&nbsp;[Back to top](#api)
+
+----
+
+
+
 
 
 
@@ -1117,7 +1358,16 @@ value: number
 | 1-5-2-3 | number[][]
 | 1-5-3-2 | number[][]
 | 1-5-4-1 | number[][]
-↩&nbsp;&nbsp;[Back to top](#typedoc-plugin-markdown)
+
+----
+
+
+↩&nbsp;&nbsp;[Back to top](#api)
+
+----
+
+
+
 
 
 
@@ -1134,7 +1384,16 @@ value: number
 | name | string
 | start_event | number
 | stop_event | number
-↩&nbsp;&nbsp;[Back to top](#typedoc-plugin-markdown)
+
+----
+
+
+↩&nbsp;&nbsp;[Back to top](#api)
+
+----
+
+
+
 
 
 
@@ -1149,7 +1408,16 @@ value: number
 | ------ | ------------------- 
 | element_type | [GameElement](#interface-gameelement)
 | game | [Game](#interface-game)
-↩&nbsp;&nbsp;[Back to top](#typedoc-plugin-markdown)
+
+----
+
+
+↩&nbsp;&nbsp;[Back to top](#api)
+
+----
+
+
+
 
 
 
@@ -1176,7 +1444,16 @@ value: number
 | start_event | number
 | stop_event | number
 | total | number
-↩&nbsp;&nbsp;[Back to top](#typedoc-plugin-markdown)
+
+----
+
+
+↩&nbsp;&nbsp;[Back to top](#api)
+
+----
+
+
+
 
 
 
@@ -1193,7 +1470,16 @@ value: number
 | new_entries | [LeagueStandings](#interface-leaguestandings)
 | standings | [LeagueStandings](#interface-leaguestandings)
 | update_status | number
-↩&nbsp;&nbsp;[Back to top](#typedoc-plugin-markdown)
+
+----
+
+
+↩&nbsp;&nbsp;[Back to top](#api)
+
+----
+
+
+
 
 
 
@@ -1221,7 +1507,16 @@ value: number
 | short_name | string
 | size | any
 | start_event | number
-↩&nbsp;&nbsp;[Back to top](#typedoc-plugin-markdown)
+
+----
+
+
+↩&nbsp;&nbsp;[Back to top](#api)
+
+----
+
+
+
 
 
 
@@ -1237,7 +1532,16 @@ value: number
 | has_next | boolean
 | number | number
 | results | [IApiLeaguePositions](#interface-iapileaguepositions)[]
-↩&nbsp;&nbsp;[Back to top](#typedoc-plugin-markdown)
+
+----
+
+
+↩&nbsp;&nbsp;[Back to top](#api)
+
+----
+
+
+
 
 
 
@@ -1269,7 +1573,16 @@ value: number
 | threat | number
 | total_points | number
 | yellow_cards | number
-↩&nbsp;&nbsp;[Back to top](#typedoc-plugin-markdown)
+
+----
+
+
+↩&nbsp;&nbsp;[Back to top](#api)
+
+----
+
+
+
 
 
 
@@ -1305,7 +1618,16 @@ value: number
 | team_division | number
 | unavailable | boolean
 | win | number
-↩&nbsp;&nbsp;[Back to top](#typedoc-plugin-markdown)
+
+----
+
+
+↩&nbsp;&nbsp;[Back to top](#api)
+
+----
+
+
+
 
 
 
@@ -1324,5 +1646,16 @@ value: number
 | is_home | boolean
 | month | number
 | opponent | number
-↩&nbsp;&nbsp;[Back to top](#typedoc-plugin-markdown)
+
+----
+
+
+↩&nbsp;&nbsp;[Back to top](#api)
+
+----
+
+
+
+
+
 
