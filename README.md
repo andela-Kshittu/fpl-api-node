@@ -40,6 +40,8 @@ fplapi.getEntry(123456).then((data) => {
 });
 ```
 
+## API
+
 [Read the API documentation](https://github.com/tgreyuk/fpl-api-node/blob/master/docs/API.md) for available methods.
 
 ## Usage
