@@ -44,8 +44,7 @@ fplapi.getEntry(123456).then((data) => {
 
 ## Usage
 
-You can use the package in a number of ways.  To leverage to create a restful api on a web app using expressjs check out 
-https://github.com/tgreyuk/fpl-angular-cli-express-seed. 
+You can use the package in a number of ways for example to create a restful api on a web app using expressjs. 
 
 The package uses axios under the hood. If using outside of typescript and don't care about types you may prefer to fetch the endpoints directly rather than use this wrapper.
 
