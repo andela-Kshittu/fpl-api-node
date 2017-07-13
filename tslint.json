@@ -1,9 +1,8 @@
 {
   "extends": ["tslint:latest"],
   "rules": {
-    "interface-name": [
-      false
-    ],
-    "quotemark": [true, "single"]
+    "interface-name": [false],
+    "quotemark": [true, "single"],
+    "no-console": [false]
   }
 }
