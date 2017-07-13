@@ -1,16 +1,8 @@
-import {
-  BootstrappedData,
-  ElementType,
-  Entry,
-  EntryEvent,
-  EntryTransfers,
-  GameSettings,
-  League,
-  Team,
-} from './interfaces';
 
 import axios from 'axios';
+import * as types from './interfaces';
 
+// set axios defaults
 axios.defaults.baseURL = 'https://fantasy.premierleague.com/drf';
 
 /**
@@ -19,7 +11,7 @@ axios.defaults.baseURL = 'https://fantasy.premierleague.com/drf';
  * mapped to https://fantasy.premierleague.com/drf/bootstrap-static
  * @returns {Promise}
  */
-export function getBootstrappedData(): Promise<BootstrappedData> {
+export function getBootstrappedData(): Promise<types.BootstrappedData> {
   return getData('/bootstrap-static');
 }
 
@@ -30,7 +22,7 @@ export function getBootstrappedData(): Promise<BootstrappedData> {
  * @param entryId Entry id
  * @returns {Promise}
  */
-export function getEntry(entryId: number): Promise<Entry> {
+export function getEntry(entryId: number): Promise<types.Entry> {
   return getData(`/entry/${entryId}/history`);
 }
 
@@ -43,7 +35,7 @@ export function getEntry(entryId: number): Promise<Entry> {
  * @param eventNumber The event / gameweek number
  * @returns {Promise}
  */
-export function getEntryEvent(entryId: number, eventNumber: number): Promise<EntryEvent> {
+export function getEntryEvent(entryId: number, eventNumber: number): Promise<types.EntryEvent> {
   return getData(`/entry/${entryId}/event/${eventNumber}`);
 }
 
@@ -54,7 +46,7 @@ export function getEntryEvent(entryId: number, eventNumber: number): Promise<Ent
  * @param entryId Entry id
  * @returns {Promise}
  */
-export function getEntryTransfers(entryId: number): Promise<EntryTransfers> {
+export function getEntryTransfers(entryId: number): Promise<types.EntryTransfers> {
   return getData(`/entry/${entryId}/transfers`);
 }
 
@@ -64,7 +56,7 @@ export function getEntryTransfers(entryId: number): Promise<EntryTransfers> {
  * mapped to https://fantasy.premierleague.com/drf/teams
  * @returns {Promise}
  */
-export function getTeams(): Promise<Team[]> {
+export function getTeams(): Promise<types.Team[]> {
   return getData('/teams');
 }
 
@@ -74,7 +66,7 @@ export function getTeams(): Promise<Team[]> {
  * mapped to https://fantasy.premierleague.com/drf/elements
  * @returns {Promise}
  */
-export function getElements(): Promise<Element[]> {
+export function getElements(): Promise<types.Element[]> {
   return getData('/elements');
 }
 
@@ -83,7 +75,7 @@ export function getElements(): Promise<Element[]> {
  * mapped to https://fantasy.premierleague.com/drf/elements-types
  * @returns {Promise}
  */
-export function getElementTypes(): Promise<ElementType[]> {
+export function getElementTypes(): Promise<types.ElementType[]> {
   return getData('/element-types');
 }
 
@@ -93,7 +85,7 @@ export function getElementTypes(): Promise<ElementType[]> {
  * mapped to https://fantasy.premierleague.com/drf/game-settings
  * @returns {Promise}
  */
-export function getGameSettings(): Promise<GameSettings> {
+export function getGameSettings(): Promise<types.GameSettings> {
   return getData('game-settings');
 }
 
@@ -103,7 +95,7 @@ export function getGameSettings(): Promise<GameSettings> {
  * mapped to https://fantasy.premierleague.com/drf/event/${eventNumber}/live
  * @returns {Promise}
  */
-export function getEvent(eventNumber: number): Promise<Event> {
+export function getEvent(eventNumber: number): Promise<types.Event> {
   return getData(`/event/${eventNumber}/live`);
 }
 
@@ -114,7 +106,7 @@ export function getEvent(eventNumber: number): Promise<Event> {
  * @param leagueId League id
  * @returns {Promise}
  */
-export function getClassicLeagueStandings(leagueId: number): Promise<League> {
+export function getClassicLeagueStandings(leagueId: number): Promise<types.League> {
   return getData(`/leagues-classic-standings/${leagueId}`);
 }
 
@@ -131,3 +123,6 @@ function getData(path: string) {
     return error;
   });
 }
+
+// export types
+export { types };
