@@ -14,7 +14,7 @@
 
 
 
-*Defined in [index.ts:14](https://github.com/tgreyuk/fpl-api-node/blob/e98f696/src/index.ts#L14)*
+*Defined in [index.ts:14](https://github.com/tgreyuk/fpl-api-node/blob/62f7e80/src/index.ts#L14)*
 
 
 
@@ -42,7 +42,7 @@ ___
 
 
 
-*Defined in [index.ts:120](https://github.com/tgreyuk/fpl-api-node/blob/e98f696/src/index.ts#L120)*
+*Defined in [index.ts:109](https://github.com/tgreyuk/fpl-api-node/blob/62f7e80/src/index.ts#L109)*
 
 
 
@@ -79,7 +79,7 @@ ___
 
 
 
-*Defined in [index.ts:89](https://github.com/tgreyuk/fpl-api-node/blob/e98f696/src/index.ts#L89)*
+*Defined in [index.ts:78](https://github.com/tgreyuk/fpl-api-node/blob/62f7e80/src/index.ts#L78)*
 
 
 
@@ -107,7 +107,7 @@ ___
 
 
 
-*Defined in [index.ts:80](https://github.com/tgreyuk/fpl-api-node/blob/e98f696/src/index.ts#L80)*
+*Defined in [index.ts:69](https://github.com/tgreyuk/fpl-api-node/blob/62f7e80/src/index.ts#L69)*
 
 
 
@@ -135,7 +135,7 @@ ___
 
 
 
-*Defined in [index.ts:36](https://github.com/tgreyuk/fpl-api-node/blob/e98f696/src/index.ts#L36)*
+*Defined in [index.ts:25](https://github.com/tgreyuk/fpl-api-node/blob/62f7e80/src/index.ts#L25)*
 
 
 
@@ -162,42 +162,6 @@ Entry History: A promise that if fulfilled returns an object mapped to [https://
 
 ___
 
-<a id="getentrydetails"></a>
-
-###  getEntryDetails
-
-► **getEntryDetails**(entryId: *`number`*): `Promise`<[EntryDetails](#interface-entrydetails)>
-
-
-
-
-*Defined in [index.ts:25](https://github.com/tgreyuk/fpl-api-node/blob/e98f696/src/index.ts#L25)*
-
-
-
-Entry (Fpl manager team): A promise that if fulfilled returns an object mapped to [https://fantasy.premierleague.com/drf/entry/${id}](https://fantasy.premierleague.com/drf/entry/${id})
-
-
-**Parameters:**
-
-| Param  | Type                | Description  |
-| ------ | ------------------- | ------------ |
-| entryId | `number` | Entry id |
-
-
-
-
-
-**Returns:** `Promise`<[EntryDetails](#interface-entrydetails)>
-
-
-
-
-
-
-
-___
-
 <a id="getentryevent"></a>
 
 ###  getEntryEvent
@@ -207,7 +171,7 @@ ___
 
 
 
-*Defined in [index.ts:49](https://github.com/tgreyuk/fpl-api-node/blob/e98f696/src/index.ts#L49)*
+*Defined in [index.ts:38](https://github.com/tgreyuk/fpl-api-node/blob/62f7e80/src/index.ts#L38)*
 
 
 
@@ -244,7 +208,7 @@ ___
 
 
 
-*Defined in [index.ts:60](https://github.com/tgreyuk/fpl-api-node/blob/e98f696/src/index.ts#L60)*
+*Defined in [index.ts:49](https://github.com/tgreyuk/fpl-api-node/blob/62f7e80/src/index.ts#L49)*
 
 
 
@@ -280,7 +244,7 @@ ___
 
 
 
-*Defined in [index.ts:109](https://github.com/tgreyuk/fpl-api-node/blob/e98f696/src/index.ts#L109)*
+*Defined in [index.ts:98](https://github.com/tgreyuk/fpl-api-node/blob/62f7e80/src/index.ts#L98)*
 
 
 
@@ -316,7 +280,7 @@ ___
 
 
 
-*Defined in [index.ts:99](https://github.com/tgreyuk/fpl-api-node/blob/e98f696/src/index.ts#L99)*
+*Defined in [index.ts:88](https://github.com/tgreyuk/fpl-api-node/blob/62f7e80/src/index.ts#L88)*
 
 
 
@@ -344,7 +308,7 @@ ___
 
 
 
-*Defined in [index.ts:70](https://github.com/tgreyuk/fpl-api-node/blob/e98f696/src/index.ts#L70)*
+*Defined in [index.ts:59](https://github.com/tgreyuk/fpl-api-node/blob/62f7e80/src/index.ts#L59)*
 
 
 
