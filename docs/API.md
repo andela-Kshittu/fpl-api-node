@@ -14,7 +14,7 @@
 
 
 
-*Defined in [index.ts:14](https://github.com/tgreyuk/fpl-api-node/blob/4716cad/src/index.ts#L14)*
+*Defined in [index.ts:14](https://github.com/tgreyuk/fpl-api-node/blob/e98f696/src/index.ts#L14)*
 
 
 
@@ -42,7 +42,7 @@ ___
 
 
 
-*Defined in [index.ts:120](https://github.com/tgreyuk/fpl-api-node/blob/4716cad/src/index.ts#L120)*
+*Defined in [index.ts:120](https://github.com/tgreyuk/fpl-api-node/blob/e98f696/src/index.ts#L120)*
 
 
 
@@ -79,7 +79,7 @@ ___
 
 
 
-*Defined in [index.ts:89](https://github.com/tgreyuk/fpl-api-node/blob/4716cad/src/index.ts#L89)*
+*Defined in [index.ts:89](https://github.com/tgreyuk/fpl-api-node/blob/e98f696/src/index.ts#L89)*
 
 
 
@@ -107,7 +107,7 @@ ___
 
 
 
-*Defined in [index.ts:80](https://github.com/tgreyuk/fpl-api-node/blob/4716cad/src/index.ts#L80)*
+*Defined in [index.ts:80](https://github.com/tgreyuk/fpl-api-node/blob/e98f696/src/index.ts#L80)*
 
 
 
@@ -126,6 +126,42 @@ Elements (players): A promise that if fulfilled returns an object mapped to [htt
 
 ___
 
+<a id="getentry"></a>
+
+###  getEntry
+
+► **getEntry**(entryId: *`number`*): `Promise`<[Entry](#interface-entry)>
+
+
+
+
+*Defined in [index.ts:36](https://github.com/tgreyuk/fpl-api-node/blob/e98f696/src/index.ts#L36)*
+
+
+
+Entry History: A promise that if fulfilled returns an object mapped to [https://fantasy.premierleague.com/drf/entry/${id}/history](https://fantasy.premierleague.com/drf/entry/${id}/history)
+
+
+**Parameters:**
+
+| Param  | Type                | Description  |
+| ------ | ------------------- | ------------ |
+| entryId | `number` | Entry id |
+
+
+
+
+
+**Returns:** `Promise`<[Entry](#interface-entry)>
+
+
+
+
+
+
+
+___
+
 <a id="getentrydetails"></a>
 
 ###  getEntryDetails
@@ -135,7 +171,7 @@ ___
 
 
 
-*Defined in [index.ts:25](https://github.com/tgreyuk/fpl-api-node/blob/4716cad/src/index.ts#L25)*
+*Defined in [index.ts:25](https://github.com/tgreyuk/fpl-api-node/blob/e98f696/src/index.ts#L25)*
 
 
 
@@ -171,7 +207,7 @@ ___
 
 
 
-*Defined in [index.ts:49](https://github.com/tgreyuk/fpl-api-node/blob/4716cad/src/index.ts#L49)*
+*Defined in [index.ts:49](https://github.com/tgreyuk/fpl-api-node/blob/e98f696/src/index.ts#L49)*
 
 
 
@@ -199,42 +235,6 @@ Entry event: Details of a particular event (or gameweek): A promise that if fulf
 
 ___
 
-<a id="getentryhistory"></a>
-
-###  getEntryHistory
-
-► **getEntryHistory**(entryId: *`number`*): `Promise`<[Entry](#interface-entry)>
-
-
-
-
-*Defined in [index.ts:36](https://github.com/tgreyuk/fpl-api-node/blob/4716cad/src/index.ts#L36)*
-
-
-
-Entry History: A promise that if fulfilled returns an object mapped to [https://fantasy.premierleague.com/drf/entry/${id}/history](https://fantasy.premierleague.com/drf/entry/${id}/history)
-
-
-**Parameters:**
-
-| Param  | Type                | Description  |
-| ------ | ------------------- | ------------ |
-| entryId | `number` | Entry id |
-
-
-
-
-
-**Returns:** `Promise`<[Entry](#interface-entry)>
-
-
-
-
-
-
-
-___
-
 <a id="getentrytransfers"></a>
 
 ###  getEntryTransfers
@@ -244,7 +244,7 @@ ___
 
 
 
-*Defined in [index.ts:60](https://github.com/tgreyuk/fpl-api-node/blob/4716cad/src/index.ts#L60)*
+*Defined in [index.ts:60](https://github.com/tgreyuk/fpl-api-node/blob/e98f696/src/index.ts#L60)*
 
 
 
@@ -280,7 +280,7 @@ ___
 
 
 
-*Defined in [index.ts:109](https://github.com/tgreyuk/fpl-api-node/blob/4716cad/src/index.ts#L109)*
+*Defined in [index.ts:109](https://github.com/tgreyuk/fpl-api-node/blob/e98f696/src/index.ts#L109)*
 
 
 
@@ -316,7 +316,7 @@ ___
 
 
 
-*Defined in [index.ts:99](https://github.com/tgreyuk/fpl-api-node/blob/4716cad/src/index.ts#L99)*
+*Defined in [index.ts:99](https://github.com/tgreyuk/fpl-api-node/blob/e98f696/src/index.ts#L99)*
 
 
 
@@ -344,7 +344,7 @@ ___
 
 
 
-*Defined in [index.ts:70](https://github.com/tgreyuk/fpl-api-node/blob/4716cad/src/index.ts#L70)*
+*Defined in [index.ts:70](https://github.com/tgreyuk/fpl-api-node/blob/e98f696/src/index.ts#L70)*
 
 
 

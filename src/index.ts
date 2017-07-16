@@ -33,7 +33,7 @@ export function getEntryDetails(entryId: number): Promise<types.EntryDetails> {
  * @param entryId Entry id
  * @returns {Promise}
  */
-export function getEntryHistory(entryId: number): Promise<types.Entry> {
+export function getEntry(entryId: number): Promise<types.Entry> {
   return getData(`/entry/${entryId}/history`);
 }
 
