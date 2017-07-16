@@ -18,11 +18,22 @@ export function getBootstrappedData(): Promise<types.BootstrappedData> {
 /**
  * Entry (Fpl manager team):
  * A promise that if fulfilled returns an object
+ * mapped to https://fantasy.premierleague.com/drf/entry/${id}
+ * @param entryId Entry id
+ * @returns {Promise}
+ */
+export function getEntryDetails(entryId: number): Promise<types.EntryDetails> {
+  return getData(`/entry/${entryId}`);
+}
+
+/**
+ * Entry History:
+ * A promise that if fulfilled returns an object
  * mapped to https://fantasy.premierleague.com/drf/entry/${id}/history
  * @param entryId Entry id
  * @returns {Promise}
  */
-export function getEntry(entryId: number): Promise<types.Entry> {
+export function getEntryHistory(entryId: number): Promise<types.Entry> {
   return getData(`/entry/${entryId}/history`);
 }
 

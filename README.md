@@ -52,6 +52,7 @@ The package uses axios under the hood. If using outside of typescript and don't 
 
 The Available end-points are:
 * https://fantasy.premierleague.com/drf/bootstrap-static
+* https://fantasy.premierleague.com/drf/entry/${id}
 * https://fantasy.premierleague.com/drf/entry/${id}/history
 * https://fantasy.premierleague.com/drf/entry/${id}/event/${eventNumber}
 * https://fantasy.premierleague.com/drf/entry/${id}/transfers
@@ -61,5 +62,3 @@ The Available end-points are:
 * https://fantasy.premierleague.com/drf/game-settings
 * https://fantasy.premierleague.com/drf/event/${eventNumber}/live
 * https://fantasy.premierleague.com/drf/leagues-classic-standings/${id}
-
-
