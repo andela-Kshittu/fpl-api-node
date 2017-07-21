@@ -1,18 +1,33 @@
 import 'mocha';
-import * as fplapi from './index';
+import * as fplApi from './index';
 
-/* TODO
-describe('should return correct properties and types', () => {
+describe('should return correct Team data', () => {
 
-  it('should return correct getBootstrappedData()', (done) => {
+  it('should return team', (done) => {
 
-    fplapi.getBootstrappedData().then((data) => {
+    fplApi.Team.find(123).then((team) => {
+      console.log('team', team);
       done();
-
-    }).catch((error) => {
-      done(new Error(error));
     });
+
+  });
+
+  it('should return team picks', (done) => {
+
+    fplApi.Team.getPicks(123).then((picks) => {
+      console.log('picks', picks);
+      done();
+    });
+
+  });
+
+  it('should return team stats', (done) => {
+
+    fplApi.Team.getStats(123).then((stats) => {
+      console.log('stats', stats);
+      done();
+    });
+
   });
 
 });
-*/

@@ -8,9 +8,9 @@
     "dist/"
   ],
   "scripts": {
-    "docs": "typedoc --out docs --name 'Fpl-api-node API' --mode file --readme none --mdHideIndexes --excludePrivate --theme markdown --mdOutFile API.md",
+    "docs": "typedoc --out docs --name 'Fpl-api-node API' --readme none --mdHideIndexes --excludePrivate --theme markdown",
     "lint": "tslint --project tsconfig.json",
-    "test": "mocha -r ts-node/register src/**/tests.ts --timeout 5000",
+    "test": "mocha -r ts-node/register src/**/tests.ts --timeout 15000 --slow 0",
     "prepublish": "rm -rf dist && tsc"
   },
   "repository": {
@@ -29,17 +29,23 @@
   },
   "homepage": "https://github.com/tgreyuk/fpl-api-node#readme",
   "dependencies": {
-    "axios": "^0.16.2"
+    "axios": "^0.16.2",
+    "lodash": "^4.17.4",
+    "node-cache": "^4.1.1",
+    "thenify": "3.3.0"
   },
   "devDependencies": {
     "@types/chai": "^4.0.1",
+    "@types/lodash": "^4.14.71",
     "@types/mocha": "^2.2.41",
+    "@types/node-cache": "^4.1.0",
+    "async": "^2.5.0",
     "chai": "^4.1.0",
     "mocha": "^3.4.2",
-    "ts-node": "^3.2.0",
+    "ts-node": "^3.2.1",
     "tslint": "^5.5.0",
     "typedoc": "^0.7.1",
-    "typedoc-plugin-markdown": "^1.0.2",
-    "typescript": "2.4.1"
+    "typedoc-plugin-markdown": "^1.0.4",
+    "typescript": "2.3.4"
   }
 }

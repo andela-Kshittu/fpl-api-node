@@ -3,10 +3,9 @@
 [![npm](https://img.shields.io/npm/v/fpl-api-node.svg)](https://www.npmjs.com/package/fpl-api-node)
 [![npm](https://img.shields.io/apm/l/vim-mode.svg)]()
 
-A strongly typed node wrapper for the Fantasy Premier League (fantasy.premierleague.com) restful web api. 
-It's job is a simple one - to fetch and return data that maps to the available end-points. 
+**Please note this library is currently being updated for the 2017-2018 season.**
 
-*To avoid topics such as Cross-Origin and Content Security Policy this wrapper should be consumed in a node server-side context.*
+A node API wrapper for the Fantasy Premier League (fantasy.premierleague.com) web apis. 
 
 
 ## Getting Started
@@ -26,39 +25,20 @@ import * as fplapi from 'fpl-api-node';
 const fplapi = require('fpl-api-node');
 ```
 
+## Examples
 
-## Example
+### Team Data
+
 
 ```js
-fplapi.getEntry(123456).then((data) => {
+const team = new fplApi.Team(123);
 
-  // do something with our data
-  console.log(data);
-
-}).catch((err) => {
-  // something went wrong
+team.getStatistics().then((data) => {
+  console.log(data.totalGoals);
 });
+
 ```
 
 ## API
 
-[Read the API documentation](https://github.com/tgreyuk/fpl-api-node/blob/master/docs/API.md) for available methods.
-
-## Usage
-
-You can use the package in a number of ways for example to create a restful api on a web app using expressjs. 
-
-The package uses axios under the hood. If using outside of typescript and don't care about types you may prefer to fetch the endpoints directly rather than use this wrapper.
-
-The Available end-points are:
-* https://fantasy.premierleague.com/drf/bootstrap-static
-* https://fantasy.premierleague.com/drf/entry/${id}
-* https://fantasy.premierleague.com/drf/entry/${id}/history
-* https://fantasy.premierleague.com/drf/entry/${id}/event/${eventNumber}
-* https://fantasy.premierleague.com/drf/entry/${id}/transfers
-* https://fantasy.premierleague.com/drf/teams
-* https://fantasy.premierleague.com/drf/elements
-* https://fantasy.premierleague.com/drf/elements-types
-* https://fantasy.premierleague.com/drf/game-settings
-* https://fantasy.premierleague.com/drf/event/${eventNumber}/live
-* https://fantasy.premierleague.com/drf/leagues-classic-standings/${id}
+Documentation is being updated for 2017-2018 season.
