@@ -10,9 +10,7 @@
     "moduleResolution": "node",
     "noEmitHelpers": true,
     "noImplicitAny": false,
-    "noUnusedLocals": true,
-    "outDir": "./dist",
-    "rootDir": "./src",
+    "noUnusedLocals": false,
     "sourceMap": true,
     "strictNullChecks": true,
     "suppressImplicitAnyIndexErrors": true,
@@ -28,7 +26,11 @@
       "node"
     ]
   },
-  "files": [
-    "src/index.ts"
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "**/tests.ts"
   ]
 }

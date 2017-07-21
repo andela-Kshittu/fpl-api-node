@@ -5,7 +5,7 @@ export interface BootstrappedData {
   elements: Element[];
   'game-settings': Game;
   'total-players': number;
-  teams: Team[];
+  teams: TeamData[];
   element_types: ElementType[];
   events: GameEvent[];
 }
@@ -229,7 +229,7 @@ export interface ElementType {
 }
 
 // team interfaces
-export interface Team {
+export interface TeamData {
   id: number;
   current_event_fixture: TeamFixture[];
   next_event_fixture: TeamFixture[];
