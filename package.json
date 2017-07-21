@@ -29,10 +29,12 @@
   },
   "homepage": "https://github.com/tgreyuk/fpl-api-node#readme",
   "dependencies": {
-    "axios": "^0.16.2"
+    "axios": "^0.16.2",
+    "memory-cache": "0.2.0"
   },
   "devDependencies": {
     "@types/chai": "^4.0.1",
+    "@types/memory-cache": "0.0.29",
     "@types/mocha": "^2.2.41",
     "chai": "^4.1.0",
     "mocha": "^3.4.2",

@@ -5,6 +5,14 @@ import * as types from './interfaces';
 // set axios defaults
 axios.defaults.baseURL = 'https://fantasy.premierleague.com/drf';
 
+export function getPlayerById(id: number) {
+  console.log('x');
+}
+
+export function getPlayerByName(webname: string) {
+  console.log('y');
+}
+
 /**
  * All static game data:
  * A promise that if fulfilled returns an object

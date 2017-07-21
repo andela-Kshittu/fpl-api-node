@@ -1,18 +1,21 @@
 import 'mocha';
-import * as fplapi from './index';
+import {FplApi} from './index';
 
-/* TODO
 describe('should return correct properties and types', () => {
 
   it('should return correct getBootstrappedData()', (done) => {
 
+    const fplApi = new FplApi();
+    console.log(fplApi.getX());
+
+    done();
+    /*
     fplapi.getBootstrappedData().then((data) => {
       done();
 
     }).catch((error) => {
       done(new Error(error));
-    });
+    });  */
   });
 
 });
-*/
