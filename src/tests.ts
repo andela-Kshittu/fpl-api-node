@@ -33,15 +33,6 @@ describe('should return correct Team data', () => {
 });*/
 describe('should return correct Player data', () => {
 
-  it('should return all players', (done) => {
-
-    players.findAll().then((data) => {
-      console.log('players', data);
-      done();
-    });
-
-  });
-
   it('should return a single player', (done) => {
 
     players.find(1).then((data) => {
