@@ -1,3 +1,4 @@
-import * as Team from './team';
+import * as players from './players';
+import * as teams from './teams';
 
-export { Team };
+export { teams, players };

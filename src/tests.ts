@@ -1,6 +1,6 @@
 import 'mocha';
-import * as fplApi from './index';
-
+import { players } from './index';
+/*
 describe('should return correct Team data', () => {
 
   it('should return team', (done) => {
@@ -25,6 +25,36 @@ describe('should return correct Team data', () => {
 
     fplApi.Team.getStats(123).then((stats) => {
       console.log('stats', stats);
+      done();
+    });
+
+  });
+
+});*/
+describe('should return correct Player data', () => {
+
+  it('should return all players', (done) => {
+
+    players.findAll().then((data) => {
+      console.log('players', data);
+      done();
+    });
+
+  });
+
+  it('should return a single player', (done) => {
+
+    players.find(1).then((data) => {
+      console.log('player', data);
+      done();
+    });
+
+  });
+
+  it('should return data for a particular gameweek', (done) => {
+
+    players.getDataForGameWeek(1, 1).then((data) => {
+      console.log('player gameweek', data);
       done();
     });
 

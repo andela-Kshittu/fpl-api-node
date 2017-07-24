@@ -49,7 +49,11 @@ export function getStats(id: number): Promise<TeamStatistics> {
     });
   });
 }
-
+/**
+ *
+ * @param entry
+ * @private
+ */
 function setSummary(entry: dataTypes.EntryDetails) {
   return {
     gameweekPoints: entry.summary_event_points,
@@ -69,7 +73,11 @@ function setSummary(entry: dataTypes.EntryDetails) {
     totalTransfers: entry.total_transfers,
   };
 }
-
+/**
+ *
+ * @param entry
+ * @private
+ */
 function setPicks(entry: dataTypes.Entry): Promise<TeamPick[]> {
 
   return new Promise((resolve, reject) => {
@@ -152,7 +160,11 @@ function setPicks(entry: dataTypes.Entry): Promise<TeamPick[]> {
   });
 
 }
-
+/**
+ *
+ * @param entry
+ * @private
+ */
 function setStats(teamData, picks): Promise<TeamStatistics> {
 
   return new Promise((resolve, reject) => {

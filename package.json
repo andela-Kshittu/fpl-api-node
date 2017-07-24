@@ -8,7 +8,7 @@
     "dist/"
   ],
   "scripts": {
-    "docs": "typedoc --out docs --name 'Fpl-api-node API' --readme none --mdHideIndexes --excludePrivate --theme markdown",
+    "docs": "typedoc --out docs --name 'Fpl-api-node API' --readme none --mdHideIndexes --excludePrivate -excludeExternals --exclude '**/*+(api.cache|api.interfaces|index|types).ts' --theme markdown",
     "lint": "tslint --project tsconfig.json",
     "test": "mocha -r ts-node/register src/**/tests.ts --timeout 15000 --slow 0",
     "prepublish": "rm -rf dist && tsc"

@@ -1,7 +1,7 @@
 import axios from 'axios';
+import * as _ from 'lodash';
 import * as NodeCache from 'node-cache';
 import * as types from './types';
-
 // cache
 export const datacache = new NodeCache();
 
@@ -92,6 +92,15 @@ export function getElements(): Promise<types.Element[]> {
   });
 }
 
+export function getElementById(id: number): Promise<types.Element> {
+  return new Promise((resolve, reject) => {
+    getElements().then((elements) => {
+      const element = _.find(elements, {id});
+      resolve(element);
+    });
+  });
+}
+
 export function getTotalPlayers(): Promise<number> {
   return new Promise((resolve, reject) => {
     getBootstrapData().then((data) => {
@@ -153,14 +162,14 @@ function getData(path: string, cacheForever?) {
   // return from cache
   if (cachedata) {
     return new Promise((resolve: any, reject: any) => {
-      console.log(path + ' from data cache');
+      // console.log(path + ' from data cache');
       resolve(cachedata);
     });
   } else {
 
     // return from request
     return axios.get(path).then((response) => {
-      console.log(path + ' from data request');
+      // console.log(path + ' from data request');
       const data = response.data;
       datacache.set(path, data);
       return data;
