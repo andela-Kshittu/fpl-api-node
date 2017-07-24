@@ -75,3 +75,25 @@ export interface Player {
     elementType: number;
     club: number;
 }
+
+export interface PlayerStats {
+  assists: number;
+  bonus: number;
+  bps: number;
+  cleanSheets: number;
+  creativity: number;
+  goals_conceded: number;
+  goalsScored: number;
+  ictIndex: number;
+  inDreamteam: boolean;
+  influence: number;
+  minutes: number;
+  ownGoals: number;
+  penaltiesMissed: number;
+  penaltiesSaved: number;
+  redCards: number;
+  saves: number;
+  threat: number;
+  totalPoints: number;
+  yellowCards: number;
+}

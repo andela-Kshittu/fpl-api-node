@@ -39,3 +39,13 @@ function setSummary(entry: dataTypes.EntryDetails) {
     totalTransfers: entry.total_transfers,
   };
 }
+
+/*
+public getStatsForGameweek(gameweekNumber: number): Promise<apiTypes.PlayerStats> {
+    return new Promise((resolve: any, reject: any) => {
+      dataService.getEvent(gameweekNumber).then((event) => {
+        const element = event.elements[this.id];
+        resolve(element.stats);
+      });
+    });
+*/
