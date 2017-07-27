@@ -1,0 +1,13 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../dist-tasks",    
+    "rootDir": "./",
+    "target": "es5"
+  },
+  "exclude": [
+    "node_modules",
+    "src",
+    "test"
+  ]
+}

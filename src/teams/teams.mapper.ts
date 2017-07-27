@@ -1,56 +1,10 @@
 import * as async from 'async';
 import * as _ from 'lodash';
-import * as NodeCache from 'node-cache';
-import { fromCache } from './api-service';
-import {TeamPick,TeamStatistics,TeamSummary} from './api-service/types';
-import * as dataService from './data-service';
-import * as dataTypes from './data-service/types';
-export function find(id: number) {
-  return fromCache(`team-${id}`, () => {
-    return new Promise((resolve: any, reject: any) => {
-      dataService.getEntry(id).then((data) => {
-        const team = toTeam(data);
-        resolve(team);
-      });
-    });
-  });
-}
+import {TeamPick, TeamStatistics, TeamSummary} from '../api-service/types';
+import * as dataService from '../data-service';
+import * as dataTypes from '../data-service/types';
 
-/**
- * Returns team picks
- */
-export function getPicks(teamId: number): Promise<TeamPick[]> {
-  return fromCache(`team-picks-${teamId}`, () => {
-    return new Promise((resolve: any, reject: any) => {
-      dataService.getEntry(teamId).then((data) => {
-        toPicks(data).then((picks) => {
-          resolve(picks);
-        });
-      });
-    });
-  });
-}
-
-/**
- * Returns team summary
- */
-export function getStats(teamId: number): Promise<TeamStatistics> {
-  return fromCache(`team-stats-${teamId}`, () => {
-    return new Promise((resolve: any, reject: any) => {
-      Promise.all([dataService.getEntry(teamId), getPicks(teamId)]).then((data) => {
-        const stats = toStats(data[0], data[1]);
-        resolve(stats);
-      });
-    });
-  });
-}
-
-/**
- *
- * @param data
- * @private
- */
-function toTeam(data) {
+export function toTeam(data) {
   const entry = data.entry;
   return {
     gameweekPoints: entry.summary_event_points,
@@ -69,12 +23,8 @@ function toTeam(data) {
     totalTransfers: entry.total_transfers,
   };
 }
-/**
- *
- * @param entry
- * @private
- */
-function toPicks(entry: dataTypes.Entry): Promise<TeamPick[]> {
+
+export function toPicks(entry: dataTypes.Entry): Promise<TeamPick[]> {
 
   return new Promise((resolve, reject) => {
 
@@ -157,13 +107,7 @@ function toPicks(entry: dataTypes.Entry): Promise<TeamPick[]> {
 
 }
 
-/**
- *
- * @param teamData
- * @param picks
- * @private
- */
-function toStats(teamData, picks): Promise<TeamStatistics> {
+export function toStats(teamData, picks): Promise<TeamStatistics> {
 
   return new Promise((resolve, reject) => {
 
